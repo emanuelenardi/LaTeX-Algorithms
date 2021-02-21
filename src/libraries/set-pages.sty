@@ -17,3 +17,11 @@
 
 % NOTE toglie i numeri a piè pagina dalle pagine bianche
 \usepackage{emptypage}
+
+% NOTE Absolutely, definitely, preventing page break
+% https://tex.stackexchange.com/a/94702/127473
+\newenvironment{absolutelynopagebreak}
+    {\par\nobreak\vfil\penalty0\vfilneg
+    \vtop\bgroup}
+    {\par\xdef\tpd{\the\prevdepth}\egroup
+    \prevdepth=\tpd}

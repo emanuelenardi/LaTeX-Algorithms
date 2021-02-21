@@ -12,6 +12,7 @@ cd %BUILD_DIR%
 rmdir /q /s _minted-cache >nul 2>&1
 del /s *.aux >nul 2>&1
 del /s *.loa >nul 2>&1
+del /s *.loe >nul 2>&1
 del /s *.lof >nul 2>&1
 del /s *.log >nul 2>&1
 del /s *.lot >nul 2>&1

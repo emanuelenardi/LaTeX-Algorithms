@@ -39,8 +39,8 @@
 
 \usepackage{witharrows}
 % WARNING dipendenza set-color
-\colorlet{brighter}{blue!50!white}
-\WithArrowsOptions{tikz=brighter}
+% \colorlet{brighter}{blue!50!white}
+\WithArrowsOptions{tikz=mathcolor}
 
 % https://tex.stackexchange.com/a/340580/127473
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}
@@ -52,20 +52,18 @@
 \DeclarePairedDelimiter\bracket{\lbrack}{\rbrack}
 
 % IDEA teoremi, lemmi e nota bene
-
-% NOTE https://tex.stackexchange.com/questions/28165/amsthm-how-to-reduce-the-vertical-spacing-between-theorem-and-proof
-% NOTE diminuire lo spazio sopra e sotto i teoremi
-% WARNING crea problemi alla dispensa di algoritmi e non ne capisco il motivo, lo commento
-% \usepackage{thmtools}
-% \declaretheoremstyle[%
-% 	spaceabove=6pt,%
-% 	spacebelow=6pt,%
-% 	headfont=\normalfont\itshape,%
-% 	postheadspace=1em,%
-% 	qed=\qedsymbol%
-% ]{mystyle}
-% \let\proof\oldproof
-% \declaretheorem[name={Dimostrazione},style=mystyle,unnumbered]{proof}
+% https://tex.stackexchange.com/questions/28165
+% NOTE diminuisce lo spazio sopra e sotto le dimostrazioni
+\usepackage{thmtools}
+\declaretheoremstyle[%
+	spaceabove=6pt,%
+	spacebelow=6pt,%
+	headfont=\normalfont\itshape,%
+	postheadspace=1em,%
+	qed=\qedsymbol%
+]{myProofStyle}
+\let\proof\oldproof
+\declaretheorem[name={Dimostrazione}, style=myProofStyle, unnumbered]{proof}
 
 % NOTE con o senza (*) contatori
 \theoremstyle{plain}% default

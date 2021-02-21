@@ -8,7 +8,7 @@
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
 \begin{document}
 \fi
-\section{Greedy}
+\chapter{Greedy}
 \begin{fquote}
 	[Gordon Gekko]
 	[Wall Street]
@@ -437,6 +437,7 @@ Modificando di conseguenza anche la codifica dei caratteri ed ottenendo una codi
 \end{tabular}}
 \end{minipage}
 
+\vspace{10pt}
 \paragraph{Definizione formale del problema}
 Dati in input un file \(F\) composto da caratteri di un certo alfabeto (che chiameremo \(\Sigma\)).
 Dobbiamo cercare di rappresentare il nostro file con il minor numero di bit possibili.
@@ -455,6 +456,7 @@ C[F,T] = \sum_{c \in \Sigma} f[c] \cdot d_{T}(c)
 Quindi una codifica \(C\) è data da un particolare albero \(T\) dove viene rappresentata e da un particolare file \(F\).
 
 \subsection{Principio dell'algoritmo di Huffman}
+
 Vogliamo minimizzare la lunghezza della codifica per caratteri che compaiono più frequentemente: assegnando ai caratteri con frequenza minore codici corrispondenti a percorsi più lunghi all'interno dell'albero e a quelli di frequenza maggiore un percorso più corto.
 
 \begin{note}
@@ -536,9 +538,9 @@ Non è detto che l'albero di copertura minimo sia univoco.
 L'idea è di accrescere un sottoinsieme \(A\) di archi in modo tale che venga sempre
 rispettata la seguente invariante: \(A\) è un sottoinsieme di qualche albero di connessione minimo.
 
-\begin{theorem}
+\begin{theorem*}[Arco sicuro]
 Un arco \([u,v]\) è detto sicuro per \(A\) se \(A \cup \{[u,v]\}\) è ancora un sottoinsieme di qualche albero di connessione minimo.
-\end{theorem}
+\end{theorem*}
 
 \begin{algorithm}[H]
 \caption{Algoritmo generico per generare un albero di copertura minimo}
@@ -561,7 +563,7 @@ Un arco \([u,v]\) è detto sicuro per \(A\) se \(A \cup \{[u,v]\}\) è ancora un
 \subsection{Dimostrazione}
 La dimostrazione banale è lasciata come esercizio al lettore.
 Scherzo, scherzo!
-(ma non la riporto comunque)
+(ma non la riporto comunque ;-))
 
 \subsection{Algoritmo di Kruskal}
 
@@ -625,7 +627,6 @@ L'albero è memorizzato tramite un \emph{vettore dei padri}, in cui \(A\) è man
 	\input{prim}
 \end{algorithm}
 
-\vspace{-15pt}
 \paragraph{Esempio}
 Fai riferimento alla \href{https://www.youtube.com/watch?v=VocW2D-Z0hk&feature=youtu.be&t=3247}{spiegazione grafica}, qui viene riportato solo lo schema sulla quale si basa.
 
@@ -633,7 +634,6 @@ Fai riferimento alla \href{https://www.youtube.com/watch?v=VocW2D-Z0hk&feature=y
 	\includegraphics{mst}
 \end{figure}
 
-\vspace{-15pt}
 \paragraph{Analisi della complessità} \(\Omicron(m \log n)\)
 
 L'efficienza dell'algoritmo di Prim dipende dalla coda con priorità.

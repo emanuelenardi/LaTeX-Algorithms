@@ -25,7 +25,7 @@ La tabella è facilmente indirizzabile: la sua consultazione costa \(\Omicron(1)
 
 \begin{figure}[H]\centering
     \includegraphics[width=.65\textwidth]{progrdyn}
-    \caption{Approccio generale ad un problema}
+    \caption{Approccio generale ad un problema per capire quale tecnica utilizzare}
 \end{figure}
 
 \subsection*{La programmazione dinamica nella storia}
@@ -121,7 +121,9 @@ La complessità in tempo è \(T(n) = \Theta(n)\), quella in spazio è \(S(n) = \
 \`{E} possibile migliorare l'algoritmo riducendo lo spazio utilizzato.
 
 \begin{table}[H]\centering
-    \caption{I casi base vengono inseriti manualemente nelle relative posizioni.\\Ogni valore \(i\)-esimo successivo viene computato sulla base dei suoi valori precedenti \(i-1\) e \(1-2\).}
+    \caption[Inserire didascalia per il toc]
+            {I casi base vengono inseriti manualmente nelle relative posizioni.\\
+             Ogni valore \(i\)-esimo successivo viene computato sulla base dei suoi valori precedenti \(i-1\) e \(1-2\).}
     % \includegraphics[width=.4\textwidth]{fib-table1}
     \begin{tabular}{@{} *{9}{C} @{}}
     \toprule
@@ -234,7 +236,7 @@ Per dimostrarlo utilizziamo il teorema di sottostruttura ottima, che dice sostan
 Proviamo quindi a dimostrare le scelte fatte.
 Il problema dato dalle prime \(i\) case è indicato con \(HV_{p}(i)\) e una (ce ne può essere più di una) soluzione ottima per questo problema è indicato con \(HV_{s}(i)\).
 
-Se \(i \not\in HV_{s}i\) allora \(HV_{s}(i) = HV_{s}(i-1)\) (ossia se l'\(i\)-esimo elemento non appartiene alla soluzione del problema \(HV_{s}i\) allora abbiamo scartare quella donazione \(HV_{s}(i-1)\)), altrimenti se l'abbiamo accettata e quindi \(i \in HV_{s}i\) allora \(HV_{s}(i) = HV_{s}(i-2) \cup \{i\}\).
+Se \(i \not\in HV_{s}(i)\) allora \(HV_{s}(i) = HV_{s}(i-1)\) (ossia se l'\(i\)-esimo elemento non appartiene alla soluzione del problema \(HV_{s}i\) allora abbiamo scartare quella donazione \(HV_{s}(i-1)\)), altrimenti se l'abbiamo accettata e quindi \(i \in HV_{s}i\) allora \(HV_{s}(i) = HV_{s}(i-2) \cup \{i\}\).
 
 Se abbiamo la soluzione ottima, allora possiamo dimostrare che abbiamo la soluzione ottima per i rispettivi sottoproblemi (da qui sottostruttura).
 
@@ -253,7 +255,7 @@ Dobbiamo dimostrare separatamente il caso in cui prendiamo la donazione \(i\)-es
 
 Entrambe le dimostrazioni procedono per assurdo.
 
-\begin{proof}[Dimostrazione caso 1: \fbox{\(i \not\in HV_{s}(i)\)}]
+\begin{proof}[Dimostrazione caso 1: \(i {\protect\not\in} HV_{s}(i)\)]
 Se non abbiamo preso la donazione \(i\)-esima vogliamo dimostrare che la soluzione ottima \(HV_{s}(i)\) è una soluzione ottima anche per il problema precedente \(HV_{p}(i-1)\).
 
 Se così non fosse esisterebbe una soluzione (migliore) \(HV_{s}^{'} (i-1)\) per il problema \(HV_{p}(i-1)\) tale che l'ammontare delle donazioni del problema precedente sarebbe maggiore (in simboli \(\abs{HV_{s}^{'} (i-1)} > \abs{HV_{s}(i)}\)).
@@ -262,7 +264,7 @@ Ma allora \(HV_{s}^{'} (i-1)\) sarebbe una soluzione per \(HV_{p}(i)\)% (tale ch
 Quindi \(HV_{s}(i)\) è una soluzione ottima anche per \(HV_{p}(i-1)\).
 \end{proof}
 
-\begin{proof}[Dimostrazione caso 2: \fbox{\(i \in HV_{s}(i)\)}]
+\begin{proof}[Dimostrazione caso 2: \(i \in HV_{s}(i)\)]
 Se abbiamo preso l'\(i\)-esima donazione vogliamo dimostrare che \(i-1\) non appartiene alla soluzione ottima (in simboli \(i-1 \not\in HV_{s}(i)\)), altrimenti non sarebbe una soluzione ammissibile.
 Quindi, se dalla soluzione ottima \(HV_{s}(i)\) togliessimo la donazione \(i\)-esima (\(HV_{s}(i) - \{i\}\)) questa dovrebbe essere una soluzione ottima per \(HV_{p} (i-2)\).
 
@@ -516,6 +518,7 @@ Possiamo quindi scrivere la formula per calcolare il massimo guadagno dati \(i\)
 \subsection{Algoritmo iterativo}
 
 Dalla formula possiamo ricavare il seguente algoritmo iterativo.
+
 \begin{algorithm}[H]
     \caption{Algoritmo \emph{iterativo} per la soluzione al problema dello zaino}
     \input{knapsack-dp}

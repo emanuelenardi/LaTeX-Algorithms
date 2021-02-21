@@ -19,13 +19,13 @@
 
 \listoftables
 
-% TODO il pacchetto crea problemi con il preambolo, non carica i pacchetti successivi
-% \listoftheorems[ignoreall, show={theorem, definition}] % NOTE si sovrascrivono
-% \renewcommand{\thmtformatoptarg}[1]{ -- #1}
-% \renewcommand{\listtheoremname}{Elenco dei teoremi}
-% \listoftheorems[ignoreall, show={theorem}]
-% \listoftheorems[ignoreall, show={definition}]
-% \listoftheorems[ignoreall, show={note}]
+\begin{absolutelynopagebreak}
+\listoftheorems[title={Elenco dei teoremi}, numwidth={3em}, ignoreall, show={theorem}]
+\listoftheorems[title={Elenco delle dimostrazioni}, ignoreall, show={proof}]
+\end{absolutelynopagebreak}
+\blankpage
+
+\listoftheorems[title={Elenco delle definizioni}, numwidth={3em}, ignoreall, show={definition}]
 
 \listofalgorithms
 
