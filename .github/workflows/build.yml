@@ -153,6 +153,7 @@ jobs:
           name: ${{ env.ZIP_NAME }}
       
       - name: Step 2 - (2/3) Zip downloaded folder
+        if: ${{ needs.build_docs.outputs.part == ('major' || 'minor') }}
         run: zip -r $ZIP_NAME.zip $ZIP_NAME
 
       - name: Step 2 - (3/3) Upload release asset ⏫
