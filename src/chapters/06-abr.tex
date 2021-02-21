@@ -4,8 +4,8 @@
 \pagestyle{plain}
 \setcounter{chapter}{5}
 
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], draft: yes, synctex: no }
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
 \begin{document}
 \fi
 \chapter{Alberi Binari di Ricerca}
@@ -63,7 +63,7 @@ Vedremo un algoritmo per verificare se un albero binario è un albero binario di
 
 \clearpage
 \begin{algorithm}[H]
-	\caption*{Specifica Alberi Binari di Ricerca (\textsc{ABR})}
+	\caption{Specifica Alberi Binari di Ricerca (\textsc{ABR})}
 	\input{tree-abr-interface}
 \end{algorithm}
 

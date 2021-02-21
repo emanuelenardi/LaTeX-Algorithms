@@ -14,6 +14,7 @@ del /s preamble.fmt >nul 2>&1
 echo ================= CANCELLO CONTENUTO CARTELLA BUILD ==================
 cd %BUILD_DIR%
 rmdir /q /s _minted-cache >nul 2>&1
+rmdir /q /s chapters >nul 2>&1
 del /s *.aux >nul 2>&1
 del /s *.log >nul 2>&1
 del /s *.pdf >nul 2>&1

@@ -4,8 +4,8 @@
 \pagestyle{plain}
 \setcounter{chapter}{7}
 
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], draft: yes, synctex: no }
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
 \begin{document}
 \fi
 \chapter{Insiemi}
@@ -20,7 +20,8 @@ Il quale è notevolmente semplice da implementare ed estremamente efficiente ver
 Sfortunatamente la memoria occupata è \(\Omicron(m)\), indipendentemente dalle dimensioni effettive, inoltre alcune operazioni dipendono dalla memoria utilizzata per memorizzare questi oggetti, piuttosto che dal numero di oggetti effettivamente memorizzati, il che porta ad una complessità di queste operazione di \(\Omicron(m)\).
 
 \begin{algorithm}[H]
-	\caption*{Struttura dati \textsc{Set} implementata come Vettore Booleano}
+	\caption[Struttura dati insieme implementata come Vettore Booleano]
+	        {Struttura dati \textsc{Set} implementata come Vettore Booleano}
 	\input{set-vectorBool-pseudocode}
 \end{algorithm}
 
@@ -58,7 +59,8 @@ Mentre in \texttt{C++ STL} esistono due implementazioni \texttt{std::bitset} e \
 \section{Realizzazione con vettore non ordinato}
 
 \begin{algorithm}[H]
-	\caption*{Struttura dati \textsc{Set} implementata come vettore non ordinato}
+	\caption[Struttura dati insieme implementata come vettore non ordinato]
+	        {Struttura dati \textsc{Set} implementata come vettore non ordinato}
 	\input{set-unorderedVector-pseudocode}
 \end{algorithm}
 

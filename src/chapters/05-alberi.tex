@@ -11,8 +11,8 @@
 % \usepackage{silence}
 % \WarningsOff[caption]
 
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], draft: yes, synctex: no }
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
 \begin{document}
 \fi
 \chapter{Alberi}
@@ -90,8 +90,8 @@ In altre parole, anche se due alberi hanno lo stesso numero di nodi ed ognuno di
 \end{note}
 
 \begin{algorithm}[H]
-\caption*{Specifica albero binario}
-\input{tree-binary-interface}
+	\caption{Specifica albero binario}
+	\input{tree-binary-interface}
 \end{algorithm}
 
 \begin{note}

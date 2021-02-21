@@ -4,17 +4,17 @@
 \pagestyle{plain}
 \setcounter{chapter}{0}
 
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], draft: yes, synctex: no }
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
 \begin{document}
 \fi
 \chapter{Introduzione}
-% \begin{fquote}
-% 	[Lewis Carroll]
-% 	[Alice in Wonderland]
-% 	[1899]
-% Begin at the beginning,'' the King said, gravely, ``and go on till you come to an end; then stop.
-% \end{fquote}
+\begin{fquote}
+	[Lewis Carroll]
+	[Alice in Wonderland]
+	[1899]
+Begin at the beginning,'' the King said, gravely, ``and go on till you come to an end; then stop.
+\end{fquote}
 
 \begin{definition*}[problema computazionale]
 Dato un dominio di input e un dominio di output, un \emph{problema computazionale} è rappresentato dalla \textbf{relazione matematica} che associa un elemento del dominio in output ad ogni elemento del dominio di input.
@@ -100,7 +100,7 @@ In alcuni casi daremo anche per scontato alcuni passaggi, ad esempio scriveremo 
 Esempi di Pseudo-codice sono i seguenti.
 
 \begin{algorithm}
-\caption*{Implementazione na\"if della ricerca del minimo}
+\caption{Implementazione na\"if della ricerca del minimo}
 
 \BlankLine
 \prototype{\Int \minFunction{\Array{\Int} \(S\), \Int \(n\)}}{
@@ -132,7 +132,7 @@ Esempi di Pseudo-codice sono i seguenti.
 Nota che specificheremo sempre com'è fatto l'input, ossia passeremo in ingresso sia il vettore (\(S\)), sia la lunghezza del vettore passato (\(n\)).
 
 \begin{algorithm}
-\caption*{Implementazione na\"if della ricerca dell'indice di un elemento}
+\caption{Implementazione na\"if della ricerca dell'indice di un elemento}
 
 \BlankLine
 \prototype{\Int \lookup{\Array{\Int} \(S\), \Int \(n\), \Int \(v\)}}{
@@ -202,7 +202,7 @@ Ad esempio potremmo considerare il \emph{numero di operazioni \enquote{rilevanti
 Nel caso della ricerca del minimo, l'operazione più rilevante è il numero di confronti di minoranza (\(<\)), nella caso della ricerca dell'indice invece è il numero di confronti di eguaglianza (\(\Equal\)).
 
 \begin{algorithm}
-\caption*{Implementazione na\"if della ricerca del minimo}
+\caption{Implementazione na\"if della ricerca del minimo}
 
 \BlankLine
 \prototype{\Int \minFunction{\Array{\Int} \(S\), \Int \(n\)}}{
@@ -238,7 +238,7 @@ Si può fare meglio di così?
 Certo che sì!
 
 \begin{algorithm}
-\caption*{Implementazione efficiente per la ricerca del minimo}
+\caption{Implementazione efficiente per la ricerca del minimo}
 
 \BlankLine
 \prototype{\Int \minFunction{\Array{\Int} \(S\), \Int \(n\)}}{
@@ -259,7 +259,7 @@ Certo che sì!
 Con questa implementazione effettuiamo \(n-1\) confronti perché il primo elemento non deve essere confrontato.
 
 \begin{algorithm}
-\caption*{Implementazione na\"if della ricerca dell'indice di un elemento}
+\caption{Implementazione efficiente della ricerca dell'indice di un elemento}
 
 \BlankLine
 \prototype{\Int \lookup{\Array{\Int} \(S\), \Int \(n\), \Int \(v\)}}{

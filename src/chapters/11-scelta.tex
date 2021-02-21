@@ -4,8 +4,8 @@
 \pagestyle{plain}
 \setcounter{chapter}{10}
 
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], draft: yes, synctex: no }
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
 \begin{document}
 \fi
 \chapter{Scelta della struttura dati}
@@ -151,7 +151,7 @@ che contraddice l'ipotesi.
 \subsection{Verso un algoritmo}
 
 \begin{algorithm}[H]
-	\caption*{Algoritmo prototipo per il calcolo dei cammini minimi}
+	\caption{Algoritmo prototipo per il calcolo dei cammini minimi}
 	\input{shortestPath-proto}
 \end{algorithm}
 
@@ -165,7 +165,7 @@ Se al termine dell'esecuzione dell'algoritmo qualche nodo mantiene una distanza 
 \end{note}
 
 \begin{algorithm}[H]
-	\caption*{Algoritmo generico per il calcolo dei cammini minimi}
+	\caption{Algoritmo generico per il calcolo dei cammini minimi}
 	\input{shortestPath-generic}
 \end{algorithm}
 

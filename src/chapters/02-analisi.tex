@@ -4,8 +4,8 @@
 \pagestyle{plain}
 \setcounter{chapter}{1}
 
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], draft: yes, synctex: no }
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
 \begin{document}
 \fi
 \chapter{Analisi di algoritmi}
@@ -76,7 +76,7 @@ Noi utilizzeremo il modello di calcolo RAM, che sta per Random Access Machine, o
 Proviamo a calcolare la complessità dell'algoritmo che ricerca il minimo.
 
 \begin{algorithm}[H]
-\caption*{Calcolo della complessità della ricerca del minimo in un vettore}
+\caption{Calcolo della complessità della ricerca del minimo in un vettore}
 
 \BlankLine
 % \tcp{calcola il minimo di un vettore arbitrariamente lungo}
@@ -129,7 +129,7 @@ Possiamo quindi notare che le costanti vanno a semplificarsi nei parametri \(a\)
 Proviamo a calcolare la complessità dell'algoritmo che ricerca un numero intero all'interno di un vettore ordinato.
 
 \begin{algorithm}[H]
-\caption*{Calcolo della complessità della ricerca di un numero intero in un vettore ordinato}
+\caption{Calcolo della complessità della ricerca di un numero intero in un vettore ordinato}
 
 \BlankLine
 % \tcp{effettua una ricerca binaria su un vettore}

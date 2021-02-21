@@ -8,8 +8,8 @@
 \pagestyle{plain}
 \setcounter{chapter}{3}
 
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], shell: yes, draft: yes, synctex: no }
-% arara: pdflatex: { options: ["--output-directory=../build/chapters"], shell: yes, synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, draft: yes, synctex: no }
+% arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, synctex: no }
 \begin{document}
 \fi
 \chapter{Strutture dati}
@@ -105,7 +105,7 @@ Le operazioni ammesse su una sequenza sono:
 \end{itemize}
 
 \begin{algorithm}[H]
-	\caption{Specifica \textsc{Sequence}}
+	\caption[Specifica sequenza]{Specifica \textsc{Sequence}}
 	\input{sequence-interface}
 \end{algorithm}
 
@@ -165,7 +165,7 @@ Le operazioni ammesse su un'insieme sono:
 \end{itemize}
 
 \begin{algorithm}[H]
-	\caption*{Struttura dati \textsc{Set}}
+	\caption[Struttura dati insieme]{Struttura dati \textsc{Set}}
 	\input{set-interface}
 \end{algorithm}
 
@@ -229,8 +229,8 @@ Le operazioni ammesse sui dizionari sono:
 \end{itemize}
 
 \begin{algorithm}[H]
-\caption*{Specifica dizionario}
-\input{dict-interface}
+	\caption[Specifica dizionario]{Specifica \textsc{Dictionary}}
+	\input{dict-interface}
 \end{algorithm}
 
 \begin{code}
@@ -325,8 +325,8 @@ Esistono diverse implmentazioni della lista, le quali possono essere:
 % TODO inserire immagine delle liste (da fare)
 
 \begin{algorithm}[H]
-\caption*{Struttura dati lista bidirezionale con sentinella in pseudocodice}
-\input{list-pseudocode}
+	\caption{Struttura dati lista bidirezionale con sentinella in pseudocodice}
+	\input{list-pseudocode}
 \end{algorithm}
 Il costo delle operazioni di lettura, scrittura, inserimento e rimozione per questa struttura è \(\Omicron(1)\).
 
@@ -350,8 +350,8 @@ Il costo delle operazioni di lettura, scrittura, inserimento e rimozione per que
 La pila è una struttura dati \emph{dinamica}, \emph{lineare} in cui l'elemento rimosso dall'operazione di cancellazione è predeterminato, ed è quello che \enquote{è rimasto per meno tempo nell'insieme} (con strategia \textsc{LIFO}, \foreign{Last-In-First-Out}).
 
 \begin{algorithm}[H]
-\caption*{Specifica \textsc{Stack}}
-\input{stack-interface}
+	\caption[Specifica pila]{Specifica \textsc{Stack}}
+	\input{stack-interface}
 \end{algorithm}
 
 Ogni volta che viene effettuata una chiamata a funzione si usa implicitamente una pila, che memorizza tutti i record di attivazione delle chiamate effettuate.
@@ -364,7 +364,7 @@ Le pile possono essere implementate come:
 \end{itemize}
 
 \begin{algorithm}[H]
-	\caption*{Struttura dati pila basata su vettore in pseudocodice}
+	\caption{Struttura dati pila basata su vettore in pseudocodice}
 	\input{stack-pseudocode}
 \end{algorithm}
 
@@ -382,7 +382,7 @@ Le pile possono essere implementate come:
 La coda è una struttura dati \emph{dinamica} \emph{lineare} in cui l'elemento rimosso dall'operazione di cancellazione è predeterminato, ed è quello che \enquote{è rimasto per più tempo nell'insieme} (con strategia, \textsc{FIFO}, \foreign{First-In-First-Out}).
 
 \begin{algorithm}[H]
-	\caption*{Specifica \textsc{Queue}}
+	\caption[Specifica coda]{Specifica \textsc{Queue}}
 	\input{queue-interface}
 \end{algorithm}
 
@@ -396,7 +396,7 @@ Le code possono essere implementate come:
 \end{itemize}
 
 \begin{algorithm}[ht]
-	\caption*{Struttura dati coda basata su vettore circolare in pseudocodice}
+	\caption{Struttura dati coda basata su vettore circolare in pseudocodice}
 	\input{queue-pseudocode}
 \end{algorithm}
 
