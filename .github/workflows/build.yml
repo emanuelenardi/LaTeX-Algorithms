@@ -2,14 +2,15 @@ name: Compila documento LaTeX
 on:
   push:
     branches:       
-      - main              # Push events on main branch
-      - develop           # Push events on develop branch
+      - main                    # Push events on main branch
+      - develop                 # Push events on develop branch
     paths-ignore:
-      - '/*'              # ignores root files
-      - '/*/'             # ignores root directories
-      - '!/.github/'      # un-ignores the root ".github" directory
-      - '!/src/'          # un-ignores the root "src" directory
-      - '/src/build/'     # ignores build directory inside src directory
+      - '/*'                    # ignores root files
+      - '/*/'                   # ignores root directories
+      - '!/.github/'            # un-ignores the root ".github" directory
+      - '!/src/'                # un-ignores the root "src" directory
+      - '/src/build/'           # ignores build directory inside src directory
+      - '/src/scripts/windows/' # ignores windows scripts directory
   pull_request:
     types: [opened, reopened, synchronize]
 jobs:
