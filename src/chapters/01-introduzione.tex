@@ -99,7 +99,7 @@ In alcuni casi daremo anche per scontato alcuni passaggi, ad esempio scriveremo 
 
 Esempi di Pseudo-codice sono i seguenti.
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Implementazione na\"if della ricerca del minimo}
 
 \BlankLine
@@ -131,7 +131,7 @@ Esempi di Pseudo-codice sono i seguenti.
 
 Nota che specificheremo sempre com'è fatto l'input, ossia passeremo in ingresso sia il vettore (\(S\)), sia la lunghezza del vettore passato (\(n\)).
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Implementazione na\"if della ricerca dell'indice di un elemento}
 
 \BlankLine
@@ -201,7 +201,7 @@ Ad esempio potremmo considerare il \emph{numero di operazioni \enquote{rilevanti
 
 Nel caso della ricerca del minimo, l'operazione più rilevante è il numero di confronti di minoranza (\(<\)), nella caso della ricerca dell'indice invece è il numero di confronti di eguaglianza (\(\Equal\)).
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Implementazione na\"if della ricerca del minimo}
 
 \BlankLine
@@ -237,7 +237,7 @@ Quindi il numero di confronti totali per questa soluzione del problema del minim
 Si può fare meglio di così?
 Certo che sì!
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Implementazione efficiente per la ricerca del minimo}
 
 \BlankLine
@@ -256,9 +256,9 @@ Certo che sì!
 }
 \end{algorithm}
 
-Con questa implementazione effettuiamo \(n-1\) confronti perché il primo elemento non deve essere confrontato.
+Con questa implementazione effettuiamo \(n-1\) confronti perché il primo elemento non deve essere \mbox{confrontato.}
 
-\begin{algorithm}
+\begin{algorithm}[H]
 \caption{Implementazione efficiente della ricerca dell'indice di un elemento}
 
 \BlankLine

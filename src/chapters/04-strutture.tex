@@ -328,15 +328,14 @@ Esistono diverse implmentazioni della lista, le quali possono essere:
 	\caption{Struttura dati lista bidirezionale con sentinella in pseudocodice}
 	\input{list-pseudocode}
 \end{algorithm}
+
 Il costo delle operazioni di lettura, scrittura, inserimento e rimozione per questa struttura è \(\Omicron(1)\).
 
-\begin{figure}[p]
 \begin{code}
 	\captionof{listing}{Lista bidirezionale \emph{senza} sentinella in Java}
 	\label{code:java-lista-bidirezionale-sentinella}
 	\pathinputminted{java}{List.java}
 \end{code}
-\end{figure}
 
 \begin{figure}[H]
 	\centering
@@ -368,13 +367,11 @@ Le pile possono essere implementate come:
 	\input{stack-pseudocode}
 \end{algorithm}
 
-\begin{figure}[hp]
 \begin{code}
 	\captionof{listing}{Pila basata su vettore circolare in Java}
 	\label{code:vector-stack}
 	\pathinputminted{java}{VectorStack.java}
 \end{code}
-\end{figure}
 
 \clearpage
 \subsection{Coda}
@@ -395,7 +392,7 @@ Le code possono essere implementate come:
 	\item vettori circolari, il quale ha una dimensione limitata e crea un \foreign{overhead} più basso.
 \end{itemize}
 
-\begin{algorithm}[ht]
+\begin{algorithm}[H][ht]
 	\caption{Struttura dati coda basata su vettore circolare in pseudocodice}
 	\input{queue-pseudocode}
 \end{algorithm}

@@ -426,7 +426,7 @@ Definiamo il numero di erdos nel seguente modo:
 	\item le persone non raggiunte da questa definizione hanno \(erdos = +\infty\).
 \end{itemize}
 
-\begin{algorithm}[ht]
+\begin{algorithm}[H][ht]
 	% \caption{Visita in ampiezza (erdos)}
 	\caption{Ricerca dei cammini minimi più brevi dalla radice}
 	\input{erdos}
@@ -554,7 +554,7 @@ Eseguire una visita in profondità basata su chiamate ricorsive può essere risc
 \`{E} possibile che la profondità raggiunta sia troppo grande per la dimensione dello stack del linguaggio.
 In tali casi, si preferisce utilizzare una visita in ampiezza, oppure in profondità ma basata su stack esplicito.
 
-\begin{algorithm}[h]
+\begin{algorithm}[H]
 	\caption[Visita in profondità iterativa]{Visita in profondità, iterativa con stack esplicito, visita in \emph{pre}-ordine}
 	\input{dfs-stack-explicit}
 \end{algorithm}
@@ -623,7 +623,7 @@ Per farlo utilizzeremo di un vettore (che chiameremo \(id\)), il quale conterrà
 Un grafo risulta connesso se, al termine della visita in profondità, tutti i suoi nodi risultano marcati.
 Altrimenti la visita deve ricominciare da capo da un nodo non marcato, identificando una nuova componente.
 
-\begin{algorithm}[h]
+\begin{algorithm}[H]
 	\caption[Componenti Connesse]{Identifica le componenti connesse di un grafo non orientato}
 	\input{cc}
 	\input{cc-dfs}
