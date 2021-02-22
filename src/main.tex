@@ -6,6 +6,7 @@
 \mintedpath{{assets/codes/04/}}
 
 \usepackage{./settings/versions}
+% \usepackage{./settings/debug}
 
 % NOTE compilazione del documento principale
 % arara: pdflatex: {
@@ -21,24 +22,20 @@
 \begin{document}
 \frontmatter
 
-	\pagenumbering{gobble}
-
     \input{00-pagina-iniziale}
 	\cleardoublepage
-
+	
 	\input{00-dedica}
 	\cleardoublepage
 
 	\input{00-prologo}
 
-\mainmatter
-
 	\input{00-toc}
 	\cleardoublepage
 
-\part{Primo semestre}
+\mainmatter
 
-	\pagenumbering{arabic}
+\input{00-part-one}
 
 	\input{01-introduzione}
 	\input{02-analisi}
@@ -53,8 +50,9 @@
 	\input{09-grafi}
 	\input{10-strutture-speciali}
 	\input{12-dividi}
+	\cleardoublepage
 
-\part{Secondo semestre}
+\input{00-part-two}
 
 	\input{10-strutture-speciali}
 	\input{11-scelta}
@@ -71,5 +69,7 @@
 
 	\input{A1-sorting}
 	\input{A2-tarjan}
+
+\printindex
 
 \end{document}
