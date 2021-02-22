@@ -18,22 +18,18 @@ public class VectorStack implements Stack {
 	public Object top() {
 		if (n == 0)
 			throw new IllegalStateException("Stack is empty");
-
 		return A[n-1];
 	}
 
 	public Object pop() {
 		if (n == 0)
 			throw new IllegalStateException("Stack is empty");
-
 		return A[--n];
 	}
 
 	public void push(Object o) {
 		if (n == A.length)
 			throw new IllegalStateException("Stack is full");
-
 		A[n++] = o;
 	}
-
 }

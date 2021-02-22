@@ -17,7 +17,7 @@ del /s *.lof >nul 2>&1
 del /s *.log >nul 2>&1
 del /s *.lot >nul 2>&1
 del /s *.synctex(busy) >nul 2>&1
-del /s *.synctex >nul 2>&1
+del /s *.synctex.gz >nul 2>&1
 del /s *.toc >nul 2>&1
 
 cd %INITIAL_WORKING_DIRECTORY%

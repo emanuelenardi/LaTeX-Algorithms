@@ -28,8 +28,10 @@
 
 	% NOTE enables the use of small capitals in different font shapes, e.g., slanted or bold slanted
 	\usepackage{slantsc}
+	% https://tex.stackexchange.com/a/27415/127473
+	\usepackage{bold-extra}
 
-	\usepackage[english, italian]{babel}
+	\usepackage[main=italian, english]{babel}
 
 	% \usepackage[scaled=.9]{sourcecodepro}
 
@@ -50,4 +52,6 @@
 		,stretch	= 10
 		,shrink		= 10
 	]{microtype}
+	% http://www.khirevich.com/latex/microtype/
+	\SetTracking{encoding={*}, shape=sc}{40}
 \fi
