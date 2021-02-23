@@ -1,6 +1,6 @@
 % Precompiled header with XeLaTeX not working
 % see: https://tex.stackexchange.com/questions/359867/
-\RequirePackage[T1]{fontenc}
+% \RequirePackage[T1]{fontenc}
 \documentclass{book}
 % NOTE evita di spaziare equamente il contenuto su tutta la pagina
 \raggedbottom
@@ -8,8 +8,19 @@
 \usepackage{../libraries/set-color}
 % NOTE personalizzazione delle didascalie
 \usepackage{../libraries/set-graphics}
-% NOTE impostazione dei percorsi globali
+% % NOTE impostazione dei percorsi globali
 \usepackage{./paths}
+
+% WARNING incompatibile con titlesec, resetta lo stile del TOC
+% \usepackage[subfigure]{tocloft}
+% \setlength{\cftfignumwidth}{3.2em}
+
+% WARNING interferisce con il TOC
+% NOTE toglie l'intentazione e inserisce spaziatura tra paragrafi
+% \usepackage[
+%     parfill=30pt, % default: 30pt
+%     tocskip=0pt   % default: \parskip
+% ]{parskip}
 
 \usepackage[compact,explicit,sc]{titlesec}
 \usepackage{./redefinitions-chapter}
@@ -79,28 +90,24 @@
 % NOTE notazione matematica
 \usepackage{../libraries/set-math}
 
+% WARNING inserisce una voce 'indice' nel TOC
 % NOTE personalizzazione dell'aspetto degli algoritmi
 \usepackage{../libraries/set-algorithm2e}
-% NOTE nomi delle funzioni
-\usepackage{../assets/algorithms/functions}
-% NOTE ha una sua cache, attenzione alla precompilazione
-% \usepackage{../libraries/set-minted}
-
-% NOTE utilizzato nel capitolo '16-backtrack'
-% \usepackage{chessboard}
-
-% NOTE toglie l'intentazione e inserisce spaziatura tra paragrafi
-\usepackage[parfill]{parskip}
-
-% NOTE comandi personalizzati
-\usepackage{../libraries/set-macros}
-
-\usepackage{tocloft}
-\setlength{\cftfignumwidth}{3.2em}
 % https://tex.stackexchange.com/questions/130355/
 \makeatletter
 \renewcommand*\l@algocf{\@dottedtocline{1}{1em}{3.2em}}% {1}{1em}{2.3em}
 \makeatother
+% NOTE nomi delle funzioni
+\usepackage{../assets/algorithms/functions}
+
+% % NOTE ha una sua cache, attenzione alla precompilazione
+% \usepackage{../libraries/set-minted}
+
+% NOTE utilizzato nel capitolo '16-backtrack'
+\usepackage{chessboard}
+
+% NOTE comandi personalizzati
+\usepackage{../libraries/set-macros}
 
 % NOTE impostazione dei metadati del PDF
 \usepackage{./pdf-props}

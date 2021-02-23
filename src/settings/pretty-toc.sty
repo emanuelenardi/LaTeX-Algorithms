@@ -7,43 +7,68 @@
 \patchcmd{\tableofcontents}{\contentsname}{\sffamily\contentsname}{}{}
 
 \usepackage{framed}
+
+\definecolor{myred}{RGB}{127,0,0}
+\definecolor{myyellow}{RGB}{169,121,69}
 % this is the environment used to typeset the chapter entries in the ToC
 % it is a modification of the leftbar environment of the framed package
 \renewenvironment{leftbar}
-{\def\FrameCommand{\hspace{6em}%
-{\color{gray}\vrule width 2pt depth 6pt}\hspace{1em}}%
-\MakeFramed{\parshape 1 0cm \dimexpr\textwidth-6em\relax\FrameRestore}\vskip2pt%
-}
-{\endMakeFramed}
+    {\def\FrameCommand{\hspace{6em}%
+      {\color{myyellow}\vrule width 2pt depth 6pt}\hspace{1em}}%
+        \MakeFramed{\parshape 1 0cm \dimexpr\textwidth-6em\relax\FrameRestore}\vskip2pt%
+    }
+    {\endMakeFramed}
 
 \usepackage{titletoc}
 % using titletoc we redefine the ToC entries for chapters, sections, and subsections
-\titlecontents{chapter}
-  [0em]{\vspace*{\baselineskip}}
-  {%
-    \begin{minipage}{\textwidth}
-    \parbox{4.5em}{\hfill\Huge\sffamily\bfseries\color{darkgray}\thecontentspage}%
-   \vspace{-1.5\baselineskip}\leftbar{\sffamily\chaptername~\thecontentslabel}\\
-   \sffamily
-  }
-  {%
-    \begin{minipage}{\textwidth}
-    \parbox{4.5em}{%
-    \hfill\Huge\sffamily\bfseries\color{darkgray}\thecontentspage}%
-   \vspace{-1.5\baselineskip}\leftbar\textsf{}\\\sffamily}
-  {\endleftbar\end{minipage}\nopagebreak}[\vskip2pt\nopagebreak]
+
+% \titlecontents{chapter}
+%   [0em]%
+%   {\vspace*{2\baselineskip}}%
+%   {\parbox{4.5em}{%
+%     \hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
+%    \vspace*{-2.3\baselineskip}\leftbar\textsc{\small\chaptername~\thecontentslabel}\\\sffamily}
+%   {}{\endleftbar}
+
+  \titlecontents{chapter}
+    [0em]%
+	{\vspace*{2\baselineskip}}%
+    {%\begin{minipage}{\textwidth}%
+        \parbox{4.5em}{%
+    		\hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
+   			\vspace*{-2.3\baselineskip}\leftbar\textsc{\small\chaptername~\thecontentslabel}\\%
+			\sffamily}%
+	{%\begin{minipage}{\textwidth}%
+    	\parbox{4.5em}{%
+    		\hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
+			\vspace*{-2.3\baselineskip}\leftbar\textsf{}\\%
+			\sffamily}%
+	{\endleftbar%\end{minipage}\nopagebreak
+  }%
+  [\vskip2pt\nopagebreak]
 
 \titlecontents{section}
   [8.4em]
   {\sffamily\contentslabel{3em}}{}{}
-  {\hspace{0.5em}\nobreak\itshape\color{darkgray}\contentspage}
+  {\hspace{0.5em}\nobreak\itshape\color{myred}\contentspage}
 
 \titlecontents{subsection}
-  [8.4em]
+  [9.4em]
   {\sffamily\contentslabel{3em}}{}{}  
-  {\hspace{0.5em}\nobreak\itshape\color{darkgray}\contentspage}
+  {\hspace{0.5em}\nobreak\itshape\color{myred}\contentspage}
 
 \titlecontents{subsubsection}
-  [8.4em]
+  [10.4em]
   {\sffamily\contentslabel{3em}}{}{}  
-  {\hspace{0.5em}\nobreak\itshape\color{darkgray}\contentspage}
+  {\hspace{0.5em}\nobreak\itshape\color{myred}\contentspage}
+
+% NOTE non vengono inseriti nel TOC
+% \titlecontents{paragraph}
+%   [12.4em]
+%   {\sffamily\contentslabel{3em}}{}{}  
+%   {\hspace{0.5em}\nobreak\itshape\color{myred}\contentspage}
+
+% \titlecontents{subparagraph}
+%   [12.4em]
+%   {\sffamily\contentslabel{3em}}{}{}  
+%   {\hspace{0.5em}\nobreak\itshape\color{myred}\contentspage}
