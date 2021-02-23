@@ -1,0 +1,44 @@
+% NOTE modifica lo stile di "chapter"
+\usepackage{graphicx}
+\usepackage{adjustbox}
+\newcommand{\otherfancydraw}{% Defining a command to shorten things
+  \begin{adjustbox}{max height=0.5\baselineskip}% Rescaling to have height of 0.5\baselineskip
+    \raisebox{0\baselineskip}{% centra orizzontalmente la grafica
+        \includegraphics[angle=45, origin=c]{chapter-title-ornament}
+    }%
+  \end{adjustbox}%
+}
+
+% A command to create a rule centered vertically on the text
+% https://tex.stackexchange.com/a/15122/127473
+\newcommand*\ruleline[1]{\par\noindent\raisebox{.8ex}{\makebox[\linewidth]{\hrulefill\hspace{1ex}\raisebox{-.6ex}{#1}\hspace{1ex}\hrulefill}}}
+
+% \usepackage[compact,explicit,sc]{titlesec}
+\titleformat{\chapter}[block]% shape
+	{\normalfont\bfseries\scshape\huge}% format
+	{\centering Capitolo \thechapter\\}% The Chapter N° label
+	{0pt}% sep
+	{\centering \ruleline{\otherfancydraw}\\% The horizontal rule
+	\centering #1}% And the actual title
+
+% NOTE riduce gli spazi
+% https://tex.stackexchange.com/questions/4891/
+\titlespacing*{\chapter}{0pt}{0pt}{20pt}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{1em}% plus: 3.25ex -> 1ex, minus: 2ex ->3ex
+\titlespacing*{\subparagraph}{\parindent}{1ex plus 1ex minus .3ex}{1em}% plus: 3.25ex -> 1ex, minus: 2ex ->3ex
+
+% NOTE ripristina gli stili prefefiniti, quelli modificati sono commentati
+
+% \titleformat{\chapter}[display]{\normalfont\huge\bfseries}{\chaptertitlename\ \thechapter}{20pt}{\Huge#1}
+\titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{#1}
+\titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{#1}
+\titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{#1}
+\titleformat{\paragraph}[runin]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{#1}
+\titleformat{\subparagraph}[runin]{\normalfont\normalsize\bfseries}{\thesubparagraph}{1em}{#1}
+
+% \titlespacing*{\chapter}      {0pt}{50pt}{40pt}
+\titlespacing*{\section}      {0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+\titlespacing*{\subsection}   {0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\titlespacing*{\subsubsection}{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+% \titlespacing*{\paragraph}    {0pt}{3.25ex plus 1ex minus .2ex}{1em}
+% \titlespacing*{\subparagraph} {\parindent}{3.25ex plus 1ex minus .2ex}{1em}

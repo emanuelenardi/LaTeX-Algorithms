@@ -1,0 +1,23 @@
+% NOTE cambia la pagina "part"
+% https://tex.stackexchange.com/a/399145/127473
+
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{.8\textwidth}
+\setlength\epigraphrule{0pt}
+
+\usepackage{xpatch}
+% https://tex.stackexchange.com/a/262892/127473
+\makeatletter
+\xpatchcmd\epigraphhead
+{\let\@evenfoot}
+{\let\@oddfoot\@empty\let\@evenfoot}
+{}{}
+\makeatother
+
+% \usepackage[compact,explicit,sc]{titlesec}
+% https://tex.stackexchange.com/a/192956/127473
+\titleformat{\part}[display]
+    {\filleft\fontsize{40}{40}\selectfont\scshape}
+    {\fontsize{90}{90}\selectfont\thepart}
+    {20pt}
+    {#1\thispagestyle{epigraph}}

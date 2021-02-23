@@ -2,13 +2,20 @@
 % see: https://tex.stackexchange.com/questions/359867/
 \RequirePackage[T1]{fontenc}
 \documentclass{book}
+% NOTE evita di spaziare equamente il contenuto su tutta la pagina
+\raggedbottom
 
 \usepackage{../libraries/set-color}
 % NOTE personalizzazione delle didascalie
 \usepackage{../libraries/set-graphics}
 % NOTE impostazione dei percorsi globali
 \usepackage{./paths}
-\usepackage{./book-redefinitions}
+
+\usepackage[compact,explicit,sc]{titlesec}
+\usepackage{./redefinitions-chapter}
+\usepackage{./redefinitions-part}
+
+\usepackage{./redefinitions-toc}
 
 % WARNING da caricare presto
 \usepackage[subpreambles=false]{standalone}
