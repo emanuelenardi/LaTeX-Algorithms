@@ -11,6 +11,6 @@ cd $BUILD_DIR
 mkdir -p ./chapters
 find -name "*.pdf" ! -name "main.pdf" | xargs -n 1 -I{} mv -v {} ./chapters
 find . -type f ! -name '*.pdf' ! -name '.gitignore' | xargs -r rm
-rm -r _minted-cache
+# rm -r _minted-cache
 
 cd $INITIAL_WORKING_DIRECTORY

@@ -9,7 +9,7 @@ cd %SRC_DIR%
 arara -v main
 
 cd %BUILD_DIR%
-rmdir /q /s _minted-cache >nul 2>&1
+@REM rmdir /q /s _minted-cache >nul 2>&1
 del /s *.aux >nul 2>&1
 del /s *.loa >nul 2>&1
 del /s *.loe >nul 2>&1
