@@ -33,18 +33,17 @@
   \titlecontents{chapter}
     [0em]%
 	{\vspace*{2\baselineskip}}%
-    {%\begin{minipage}{\textwidth}%
+    {\begin{minipage}{\textwidth}%
         \parbox{4.5em}{%
     		\hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
    			\vspace*{-2.3\baselineskip}\leftbar\textsc{\small\chaptername~\thecontentslabel}\\%
 			\sffamily}%
-	{%\begin{minipage}{\textwidth}%
+	{\begin{minipage}{\textwidth}%
     	\parbox{4.5em}{%
     		\hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
 			\vspace*{-2.3\baselineskip}\leftbar\textsf{}\\%
 			\sffamily}%
-	{\endleftbar%\end{minipage}\nopagebreak
-  }%
+	{\endleftbar\end{minipage}\nopagebreak}%
   [\vskip2pt\nopagebreak]
 
 \titlecontents{section}
