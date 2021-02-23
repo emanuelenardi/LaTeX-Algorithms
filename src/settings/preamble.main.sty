@@ -15,7 +15,7 @@
 \usepackage{./redefinitions-chapter}
 \usepackage{./redefinitions-part}
 
-\usepackage{./redefinitions-toc}
+\usepackage{./pretty-toc}
 
 % WARNING da caricare presto
 \usepackage[subpreambles=false]{standalone}
@@ -94,6 +94,13 @@
 
 % NOTE comandi personalizzati
 \usepackage{../libraries/set-macros}
+
+\usepackage{tocloft}
+\setlength{\cftfignumwidth}{3.2em}
+% https://tex.stackexchange.com/questions/130355/
+\makeatletter
+\renewcommand*\l@algocf{\@dottedtocline{1}{1em}{3.2em}}% {1}{1em}{2.3em}
+\makeatother
 
 % NOTE impostazione dei metadati del PDF
 \usepackage{./pdf-props}
