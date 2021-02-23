@@ -3,7 +3,11 @@
 \RequirePackage[T1]{fontenc}
 \documentclass{book}
 
-\usepackage{etoolbox}
+\usepackage{../libraries/set-color}
+% NOTE personalizzazione delle didascalie
+\usepackage{../libraries/set-graphics}
+% NOTE impostazione dei percorsi globali
+\usepackage{./paths}
 \usepackage{./book-redefinitions}
 
 % WARNING da caricare presto
@@ -14,8 +18,6 @@
 \subfiletrue
 
 \usepackage{../libraries/set-geometry}
-
-\usepackage{../libraries/set-color}
 
 % NOTE gestione delle pagine
 \usepackage{../libraries/set-pages}
@@ -55,14 +57,13 @@
 % NOTE personalizzazione delle tabelle
 \usepackage{../libraries/set-tables}
 
-% NOTE personalizzazione delle didascalie
-\usepackage{../libraries/set-graphics}
-
-% NOTE 'csquotes' - permette di personalizzare le virgolette
+% NOTE permette di personalizzare le virgolette
+% NOTE dovrebbe essere caricato dopo minted, ma minted crea problemi con la cache
 \usepackage[autostyle, italian=quotes]{csquotes}
-% NOTE citazioni ad inizio capitolo
-\usepackage{../libraries/set-citations}
-% \usepackage[normalem]{ulem} % xout
+
+% TODO creare un indice
+% \usepackage{imakeidx}
+% \makeindex[columns=2, title={Indice alfabetico}]
 
 % NOTE utilizzati nei capitoli 13/14
 \usepackage{chronology}
@@ -87,8 +88,6 @@
 % NOTE comandi personalizzati
 \usepackage{../libraries/set-macros}
 
-% NOTE impostazione dei percorsi globali
-\usepackage{./paths}
 % NOTE impostazione dei metadati del PDF
 \usepackage{./pdf-props}
 
