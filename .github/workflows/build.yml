@@ -63,7 +63,7 @@ jobs:
           RELEASE_BRANCHES: main, develop
           DEFAULT_BUMP: patch # default: minor
           DRY_RUN: true # for debugging purposes
-          INITIAL_VERSION: 0.0.0
+          # INITIAL_VERSION: 0.0.0
           PRERELEASE_SUFFIX: preview
 
       # Prepare variables used to name the files
@@ -133,10 +133,9 @@ jobs:
         run: |
           echo "ZIP_NAME=${{ needs.build_docs.outputs.zip_name }}" >> $GITHUB_ENV
           echo "TAG_NAME=${{ needs.build_docs.outputs.tag_name }}" >> $GITHUB_ENV
-          echo "PART=${{ needs.build_docs.outputs.part }}"
 
       - name: Step 0 - Check if there a new tag
-        if: ${{ needs.build_docs.outputs.part == ('major' || 'minor') }}
+        if: ${{ needs.build_docs.outputs.part == ('major' || 'minor' || 'patch') }}
         id: flag
         run: |
           echo "::set-output name=post_code::0"
