@@ -3,6 +3,7 @@
 *.fdb_latexmk
 *.fls
 *.fmt
+*.idx
 *.loa
 *.loc
 *.lof
