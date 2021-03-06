@@ -46,13 +46,12 @@
 % }
 
 % https://tex.stackexchange.com/questions/227/
-\usepackage{pageslts}
-\pagenumbering{arabic}% necessario per i singoli capitoli
+% \usepackage{pageslts}
 \fancypagestyle{debug}{
 	\fancyhead[LE]{\textbf{\textsf{\thepage}}\qquad\leftmark}
 	\fancyhead[RO]{\rightmark\qquad\textbf{\textsf{\thepage}}}
 	\renewcommand{\headrulewidth}{0.4pt}%
 	\renewcommand{\footrulewidth}{0.4pt}%
-	\fancyfoot[C]{Pagina \textbf{\textsf{\thepage}}\ (\theCurrentPage)}
+	% \fancyfoot[C]{Pagina \textbf{\textsf{\thepage}}\ (\theCurrentPage)}
 }
 % \pagestyle{debug}
