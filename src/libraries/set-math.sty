@@ -55,15 +55,27 @@
 % https://tex.stackexchange.com/questions/28165
 % NOTE diminuisce lo spazio sopra e sotto le dimostrazioni
 \usepackage{thmtools}
+% \usepackage{etoolbox}
+% \makeatletter
+% \patchcmd{\thmt@mklistcmd}{\thmt@thmname}{}{}{}
+% \makeatother
+\renewcommand{\thmtformatoptarg}[1]{ #1}
+
 \declaretheoremstyle[%
 	spaceabove=6pt,%
 	spacebelow=6pt,%
-	headfont=\normalfont\itshape,%
+	headfont=\normalfont\em,%
 	postheadspace=1em,%
 	qed=\qedsymbol%
 ]{myProofStyle}
+
+% \let\theorem\oldtheorem
 \let\proof\oldproof
-\declaretheorem[name={Dimostrazione}, style=myProofStyle, unnumbered]{proof}
+% \let\definition\olddefinition
+
+% \declaretheorem[name=Teorema, style=myProofStyle]{theorem}
+\declaretheorem[name=Dimostrazione, style=myProofStyle, unnumbered]{proof}
+% \declaretheorem[name=Definizione, numberwithin=section]{definition}
 
 % NOTE con o senza (*) contatori
 \theoremstyle{plain}% default

@@ -6,14 +6,17 @@
 
 \pagestyle{plain}
 \setcounter{chapter}{12}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, synctex: no }
 \begin{document}
 \fi
 \chapter{Programmazione Dinamica}
-\epigraph{``Those who cannot remember the past are condemned to repeat it.''}%
-         {--- \textup{\textsc{George Santayana, The Life of Reason (1905)}}}
+\epigraph{\enquote{Those who cannot remember the past are condemned to repeat it.}}%
+         {--- \textup{\textsc{George Santayana}, \emph{The Life of Reason} (1905)}}
 
 \section*{Introduzione}
 
@@ -22,10 +25,12 @@ sottoproblemi, i quali vengono risolti una sola volta e la loro soluzione viene 
 Nel caso il sottoproblema debba essere risolto nuovamente, si recupera la soluzione dalla tabella.
 La tabella è facilmente indirizzabile: la sua consultazione costa \(\Omicron(1)\).
 
-\begin{figure}[H]\centering
+\begin{figure}[!ht]
+    \centering
     \includegraphics[width=.65\textwidth]{progrdyn}
     \caption{Approccio generale ad un problema per capire quale tecnica utilizzare}
 \end{figure}
+\vspace{-15pt}
 
 \subsection*{La programmazione dinamica nella storia}
 

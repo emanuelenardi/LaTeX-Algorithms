@@ -2,7 +2,10 @@
 
 \ifsubfile
 \pagestyle{plain}
-\setcounter{chapter}{18}
+\setcounter{chapter}{19}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -318,17 +321,17 @@ Il problema di {\subSetSumProblem} è debolmente \NP-completo: limitando le dime
 
 \subsection{Algoritmi pseudo-polinomiali}
 
-\begin{definition*}[Algoritmo pseudo-polinomiale]
+\begin{definition}[Algoritmo pseudo-polinomiale]
 Un algoritmo che risolve un certo problema \(R\), per qualsiasi dato \(I\) d'ingresso, in tempo \(p(\texttt{\#},d)\), con \(p\) funzione polinomiale in \texttt{\#} e \(d\), ha complessità \alert{pseudo-polinomiale}.
-\end{definition*}
+\end{definition}
 
 \begin{observation}
 Gli algoritmi per {\subSetSumProblem} basati su programmazione dinamica e memoization sono pseudo-polinomiali.
 \end{observation}
 
-\begin{theorem*}
+\begin{theorem}
 Nessun problema fortemente \NP-completo può essere risolto da un algoritmo pseudo-polinomiale, a meno che non sia \(\PTIME = \NP\).
-\end{theorem*}
+\end{theorem}
 
 \subsection{Esempi di problemi fortemente \NP-completi}
 
@@ -450,19 +453,19 @@ I problemi più interessanti sono in forma di ottimizzazione.
 Se il problema di decisione è \NP-completo, non sono noti algoritmi polinomiali per il problema di ottimizzazione.
 Esistono però algoritmi polinomiali che trovano soluzioni ammissibili più o meno vicine a quella ottima.
 
-\begin{definition*}[Algoritmi di approssimazione]
+\begin{definition}[Algoritmi di approssimazione]
 Se è possibile dimostrare un limite superiore/inferiore al rapporto fra la soluzione trovata e la soluzione ottima, allora tali algoritmi vengono detti \alert{algoritmi di approssimazione}.
-\end{definition*}
+\end{definition}
 
 \subsubsection*{Approssimazione}
 
-\begin{definition*}[\(\alpha(n)-approssimazione\)]
+\begin{definition}[\(\alpha(n)-approssimazione\)]
 Dato un problema di ottimizzazione con funzione costo non negativa \(c\), un algoritmo si dice di \alert{\(\alpha(n)\)-approssimazione} se fornisce una soluzione ammissibile \(x\) il cui costo \(c(x)\) non si discosta dal costo \(c(x^*)\) della soluzione ottima \(x^*\) per più di un fattore \(\alpha(n)\), per qualunque input di dimensione \(n\):
 \begin{alignat*}{4}
 	c(x^*) \leqslant c(x)           &\leqslant \alpha(n) c(x^*) &\quad& \alpha(n) > 1 \quad (\text{Minimizzazione})\\
 	\alpha(n) c(x^*) \leqslant c(x) &\leqslant c(x^*)           &\quad& \alpha(n) < 1 \quad (\text{Massimizzazione})
 \end{alignat*}
-\end{definition*}
+\end{definition}
 
 In altre parole se si sta cercando di minimizzare
 
@@ -625,9 +628,9 @@ Se si considera un circuito hamiltoniano e si cancella un suo arco, si ottiene u
 
 Che relazione hanno gli alberi di copertura con i circuiti hamiltoniani?
 
-\begin{theorem*}
+\begin{theorem}
 Qualunque circuito hamiltoniano \(\pi\), ha costo \(c(\pi)\) superiore al costo \(\mathit{mst}\) di albero di copertura di peso minimo, ovvero \(\mathit{mst} < c(\pi)\).
-\end{theorem*}
+\end{theorem}
 
 \begin{proof}[Dimostrazione per assurdo.]
 Supponiamo che esista un circuito hamiltoniano \(\pi\) di costo \(c(\pi) \leqslant \mathit{mst}\).

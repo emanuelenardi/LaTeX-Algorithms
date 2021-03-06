@@ -5,7 +5,10 @@
 
 \ifsubfile
 \pagestyle{plain}
-\setcounter{chapter}{17}
+\setcounter{chapter}{18}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -118,6 +121,7 @@ Se abbiamo una soluzione per la colorazione, allora abbiamo una soluzione algori
 
 Troviamo diverse applicazioni. Come ad esempio nell'assegnamento delle radio frequenze in un insieme di torri cellulari. O nell'allocazione degli esami universitari.
 
+\vspace{10pt}
 \begin{minipage}[c]{.7\textwidth}
 \subsection{Insieme indipendente}
 
@@ -139,6 +143,7 @@ Nella forma decisionale dobbiamo determinare \emph{se esiste}, dato un grafo non
 Questo è un esempio di packing problem, un problema in cui si cerca di selezionare il maggior numero di oggetti, la cui scelta è però soggetta a vincoli di esclusione.
 I problema dello zaino ne è l'esempio prìncipe.
 
+\vspace{10pt}
 \begin{minipage}[c]{.7\textwidth}
 \subsection{Copertura di vertici}
 
@@ -359,9 +364,9 @@ Dimostrare che un problema è contenuto in {\NP} è semplice.
 Dimostrare che un problema è {\NP}-completo richiede una dimostrazione difficile, apparentemente impossibile: tutti i problemi in {\NP} sono riducibili polinomialmente a tale problema, anche quelli che non conosciamo!
 
 Nel 1973 Leonid Levin ha dimostrato in maniera indipendente il seguente teorema.
-\begin{theorem*}[Teorema di Cook-Levin]
+\begin{theorem}[Teorema di Cook-Levin]
 {\sat} è {\NP}-completo.
-\end{theorem*}
+\end{theorem}
 La dimostrazione del Teorema è complessa, è basata sugli stati della macchina di Turing.
 
 \subsubsection*{Problemi introdotti oggi}

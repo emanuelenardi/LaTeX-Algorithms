@@ -2,7 +2,10 @@
 
 \ifsubfile
 \pagestyle{plain}
-\setcounter{chapter}{8}
+\setcounter{chapter}{7}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -887,7 +890,7 @@ Osservando gli intervalli possiamo quindi dedurre le relazioni di discendenza fr
 Ma perché li classifichiamo?
 Perché possiamo dimostrare delle proprietà sul tipo di archi e usarle per costruire algoritmi migliori.
 
-\begin{theorem*}
+\begin{theorem}
 Data una visita in profondità di un grafo \(G = (V, E)\), per ogni coppia di nodi \((u, v) \in V\), solo una delle condizioni seguenti è vera:
 \begin{itemize}
 	\item Gli intervalli \([dt[u], ft[u]\) e \([dt[v], ft[v]]\) sono non-sovrapposti;
@@ -897,11 +900,11 @@ Data una visita in profondità di un grafo \(G = (V, E)\), per ogni coppia di no
 	\item L'intervallo \([dt[v], ft[v]]\) è contenuto in \([dt[u], ft[u]]\);
 	\(v\) è un discendente di \(u\) in un albero \foreign{depth-first}.
 \end{itemize}
-\end{theorem*}
+\end{theorem}
 
-\begin{theorem*}
+\begin{theorem}
 Un grafo orientato è aciclico se e solo se non esistono archi all'indietro nel grafo
-\end{theorem*}
+\end{theorem}
 
 \begin{proof}[Dimostrazione]
 Abbiamo due casi:
@@ -1245,10 +1248,10 @@ Il grafo delle componenti è aciclico poiché se contenesse un ciclo, il ciclo s
 Se il grafo delle componenti è aciclico, allora posso farne un'ordinamento topologico.
 Possiamo definire quindi \(dt(C) = \minFunction\{dt(u) \mid u \in C\}\) e \(ft(C) = \maxFunction\{ft(u) \mid u \in C\}\), i quali corrisponderanno ai tempo di inizio e di fine del primo nodo visitato in \(C\).
 
-\begin{theorem*}
+\begin{theorem}
 Siano \(C\) e \(C'\) due distinte componenti fortemente connesse nel grafo orientato \mbox{\(G = (V,E)\)}.
 Se c'è un arco \((C, C') \in E_c\), allora \(ft(C) > ft(C')\).
-\end{theorem*}
+\end{theorem}
 
 La componente che finisce la visita per ultima è la componente dalla quale si possono raggiungere le altre componenti.
 

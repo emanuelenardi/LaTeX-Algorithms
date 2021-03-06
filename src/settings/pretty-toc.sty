@@ -22,20 +22,20 @@
 \usepackage{titletoc}
 % using titletoc we redefine the ToC entries for chapters, sections, and subsections
 \titlecontents{chapter}
-  [0em]%
-	{\vspace*{2\baselineskip}}%
+    [0em]%
+	  {\vspace*{2\baselineskip}}%
     {\begin{minipage}{\textwidth}%
         \parbox{4.5em}{%
     		\hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
    			\vspace*{-2.3\baselineskip}\leftbar\textsc{\small\chaptername~\thecontentslabel}\\%
 			\sffamily}%
-	{\begin{minipage}{\textwidth}%
-    	\parbox{4.5em}{%
-    		\hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
-			\vspace*{-2.3\baselineskip}\leftbar\textsf{}\\%
-			\sffamily}%
-	{\endleftbar\end{minipage}\nopagebreak}%
-  [\vskip2pt\nopagebreak]
+    {\begin{minipage}{\textwidth}%
+        \parbox{4.5em}{%
+          \hfill\Huge\sffamily\bfseries\color{myred}\thecontentspage}%
+        \vspace*{-2.3\baselineskip}\leftbar\textsc{}\\%
+        \sffamily}%
+	  {\endleftbar\end{minipage}\nopagebreak}%
+    [\vskip2pt\nopagebreak]
 
 \titlecontents{section}
   [8.4em]

@@ -2,7 +2,10 @@
 
 \ifsubfile
 \pagestyle{plain}
-\setcounter{chapter}{5}
+\setcounter{chapter}{6}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -70,7 +73,7 @@ Vedremo un algoritmo per verificare se un albero binario è un albero binario di
 \subsection*{Ricerca di un nodo}
 
 \begin{algorithm}[H]
-	\caption{Ricerca di un nodo in un dizionario realizzato tramite \textsc{ABR}}
+	\caption{Ricerca di un nodo in un \textsc{ABR}}
 	\input{dict-abr-lookup}
 \end{algorithm}
 
@@ -78,14 +81,14 @@ Vedremo un algoritmo per verificare se un albero binario è un albero binario di
 \subsection*{Ricerca del minimo e del massimo}
 
 \begin{algorithm}[H]
-	\caption{Ricerca del minimo e del massimo in un dizionario realizzato tramite \textsc{ABR}}
+	\caption{Ricerca del minimo e del massimo in un \textsc{ABR}}
 	\input{dict-abr-min-max}
 \end{algorithm}
 
 \subsection*{Ricerca del predecessore, successore}
 
 \begin{algorithm}[H]
-	\caption{Ricerca del predecessore e del successore di un nodo in un dizionario realizzato tramite \textsc{ABR}}
+	\caption{Ricerca del predecessore e del successore di un nodo in un \textsc{ABR}}
 	\input{dict-abr-succ-pred}
 \end{algorithm}
 
@@ -133,8 +136,9 @@ Rimuove il nodo contenente la chiave \(k\) dall'albero \(T\), restituisce la rad
 \clearpage
 \begin{enumerate}[label={\footnotesize\ttfamily (\arabic*)}]
 	\item se il nodo da eliminare \(u\) non ha figli: lo si elimina semplicemente, in quanto togliere una foglia non altera le proprietà di ordinamento dell'albero;
-	% NOTE aggiustamenti per fare rientrare tutto in una pagina
-	\vspace{-5pt}
+
+	\vspace{-8pt}
+
 	\begin{figure}[H]\centering
 		\hfill
 		\begin{subfigure}[t]{.3\linewidth}
@@ -148,12 +152,14 @@ Rimuove il nodo contenente la chiave \(k\) dall'albero \(T\), restituisce la rad
 		\end{subfigure}
 		\hfill\null
 	\end{figure}
-	% NOTE aggiustamenti per fare rientrare tutto in una pagina
-	\vspace{-15pt}
+
+	\vspace{-17pt}
+
 	\item se il nodo da eliminare ha un solo figlio \(f\) (destro o sinistro): si elimina \(u\) e si collega \(f\) all'ex-padre \(p\) di \(u\) in sostituzione di \(u\) (tramite la funzione \shortcut);
 	le proprietà di ordinamento non vengono alterate in quanto tutti i nodi del sottoalbero destro di \(p\) sono maggiori di \(p\) stesso;
-	% NOTE aggiustamenti per fare rientrare tutto in una pagina
-	\vspace{-5pt}
+
+	\vspace{-8pt}
+
 	\begin{figure}[H]
 		\begin{subfigure}[t]{.3\linewidth}
 			\includegraphics[width=\linewidth, page=3]{tree-abr-delete1}
@@ -170,8 +176,9 @@ Rimuove il nodo contenente la chiave \(k\) dall'albero \(T\), restituisce la rad
 			\caption{Collegamento del sottoalbero \(f\) di \(u\) al padre \(p\) di \(u\)}
 		\end{subfigure}
 	\end{figure}
-	% NOTE aggiustamenti per fare rientrare tutto in una pagina
-	\vspace{-15pt}
+
+	\vspace{-17pt}
+
 	\item se il nodo da eliminare \(u\) ha due figli: cerchiamo di ricadere nel caso {\footnotesize\ttfamily (2)};
 	\begin{enumerate*}
 		\item individuiamo il successore (predecessore) \(s\) di \(u\), il quale è il più piccolo valore maggiore di \(u\) (il più grande valore minore di \(u\)) e di conseguenza non ha figli sinistri (non ha figli destri);
@@ -179,8 +186,9 @@ Rimuove il nodo contenente la chiave \(k\) dall'albero \(T\), restituisce la rad
 		\item si collega l'eventuale figlio destro di \(s\) al padre (tramite la funzione \shortcut) in quanto trovandosi nel sottoalbero sinistro del nonno vuol dire che sicuramente il suo valore non è maggiore del padre di \(s\);
 		\item si copia \(s\) su \(u\), si rimuove il nodo \(s\), così facendo rispetto comunque l'ordine parziale.
 	\end{enumerate*}
-	% NOTE aggiustamenti per fare rientrare tutto in una pagina
+
 	\vspace{-5pt}
+
 	\begin{figure}[H]
 		\hfill
 		\begin{subfigure}[t]{.45\linewidth}
@@ -194,7 +202,7 @@ Rimuove il nodo contenente la chiave \(k\) dall'albero \(T\), restituisce la rad
 		\end{subfigure}
 		\hfill\null
 
-		\vspace{10pt}
+		\vspace{5pt}
 
 		\hfill
 		\begin{subfigure}[t]{.45\linewidth}
@@ -207,8 +215,7 @@ Rimuove il nodo contenente la chiave \(k\) dall'albero \(T\), restituisce la rad
 			\caption{Si copia \(s\) su \(u\), si rimuove il nodo \(s\)}
 		\end{subfigure}
 		\hfill\null
-
-		% NOTE rimosso perché la spiegazione risulta ugualmente chiara, e non ci starebbe tutto in una pagina
+		% NOTE rimosso perché la spiegazione risulta ugualmente chiara e non ci starebbe tutto in una pagina
 		% \vspace{10pt}
 		%
 		% \hfill
@@ -555,6 +562,7 @@ Più precisamente:
 
 Proviamo ad inserire il nodo \(16\) nell'albero red-black sottostante.
 
+\vspace{-5pt}
 \begin{figure}[H]\centering
 	% \renewcommand{\subfigurename}{Es.}
 	% \renewcommand\thesubfigure{\arabic{subfigure}}
@@ -570,12 +578,12 @@ Proviamo ad inserire il nodo \(16\) nell'albero red-black sottostante.
 	\end{subfigure}
 \end{figure}
 
-\vspace{-5pt}
+\vspace{-10pt}
 Non violiamo alcun vincolo in quanto il padre di \(16\) è nero e non abbiamo modificato l'altezza nera.
 Questo caso rappresenta il caso {\footnotesize\ttfamily 2}, l'inserimento del nodo \(16\) è quindi andato a buon fine.
 Alternativamente proviamo ad inserire il nodo \(42\) sempre nello stesso albero.
 
-% \vspace{-5pt}
+\vspace{-5pt}
 \begin{figure}[H]\centering
 	\begin{subfigure}[t]{.48\linewidth}\centering
 		\includegraphics[width=\linewidth, page=2]{tree-rb-insertNode-example-2}
@@ -613,7 +621,6 @@ L'algoritmo \treeFixDelete{\(T, t\)} ripristina la proprietà Red-Black con rota
 Ci sono quattro casi possibili (e 4 simmetrici).
 % A lezione non è stato spiegato l'algoritmo, viene riportato solo per completezza.
 
-\vspace{-5pt}
 \begin{algorithm}[H]
 	\caption{Rimozione di un nodo in un \textsc{Red-Black Tree}}
 	% \caption{Bilanciamento dell'albero in seguito alla rimozione di un nodo}
@@ -622,7 +629,6 @@ Ci sono quattro casi possibili (e 4 simmetrici).
 	\setcounter{AlgoLine}{0}
 	\input{tree-rb-balanceDelete}
 \end{algorithm}
-\vspace{-10pt}
 
 La cancellazione è concettualmente complicata, ma è efficiente.
 \begin{enumerate}[label={\footnotesize\ttfamily (\arabic*)}, noitemsep, topsep = 5pt, parsep = 5pt, partopsep = 0pt]

@@ -3,6 +3,9 @@
 \ifsubfile
 \appendix
 \pagestyle{plain}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -178,9 +181,9 @@ La complessità attesa è di \(\Omicron(n)\), molto conveniente, ma l'ipotesi su
 \clearpage
 \subsection*{Proprietà degli algoritmi di ordinamento}
 
-\begin{definition*}[stabilità]
+\begin{definition}[stabilità]
 Un algoritmo di ordinamento è detto \textbf{stabile} se preserva l'ordine iniziale tra due elementi con la stessa chiave.
-\end{definition*}
+\end{definition}
 
 \paragraph{Algoritmi stabili}
 \insertionSort, \mergeSort, \pigeonholeSort sono algoritmi stabili, mentre \heapSort (non c'è modo di renderlo stabile) e \quickSort (esistono delle versioni complicate che lo rendono tale) non lo sono.

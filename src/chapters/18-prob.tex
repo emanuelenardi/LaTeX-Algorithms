@@ -2,7 +2,10 @@
 
 \ifsubfile
 \pagestyle{plain}
-\setcounter{chapter}{16}
+\setcounter{chapter}{17}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -28,9 +31,9 @@ Sono algoritmi in cui la correttezza è probabilistica.
 
 \subsection{Test di primalità}
 
-\begin{theorem*}[Piccolo teorema di fermat]
+\begin{theorem}[Piccolo teorema di fermat]
 Per ogni numero primo \(n\) e ogni \(b \in [2, \dots, n-1] \colon b^{n-1} \bmod n = 1\).
-\end{theorem*}
+\end{theorem}
 
 \begin{algorithm}[H]
 \caption{Test di primalità}

@@ -3,6 +3,9 @@
 \ifsubfile
 \pagestyle{plain}
 \setcounter{chapter}{1}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -235,7 +238,7 @@ T(n) 	&= T(\nicefrac{n}{2}) + d \Arrow{\(\left(T\left(\frac{n}{2} \cdot \frac{1}
 		&\phantom{= T(1)}\vdots \Arrow{\(n = 2^k \Rightarrow k = \log n\)} \\
 		&= T(1) + kd \Arrow{T(0) = c}\\
 		&= T(0) + (k+1)\,d \\
-		&= kd+(c+d) \Arrow{\(k = \log n\)}\\
+		&= kd+(c+d) \\%\Arrow{\(k = \log n\)}\\
 		&= d \log n + e.
 \end{WithArrows}\]
 
@@ -282,15 +285,15 @@ Abbiamo visto anche una terza funzione che deriva dall'implementazione banale (\
 
 Ora andremo a formalizzare le nozioni sui limiti superiori ed inferiori che abbiamo accennato in maniera informale nelle lezioni precedenti.
 
-\begin{definition*}[funzione di costo]
+\begin{definition}[funzione di costo]
 Utilizziamo il termine \enquote{funzione di costo} per indicare una funzione \(f\colon\mathbb{N}\to\mathbb{R}\) (dall'insieme dei numeri naturali ai reali).
-\end{definition*}
+\end{definition}
 
-\begin{definition*}[notazione \(\Omicron\)]
+\begin{definition}[notazione \(\Omicron\)]
 Sia \(g(n)\) una funzione di costo; indichiamo con \(\Omicron(g(n))\) l'insieme delle funzioni \(f(n)\) tali per cui:
 \[
 	\exists c > 0, \exists m \geqslant 0\,\colon \alert{f(n) \leqslant cg(n)}, \forall n \geqslant m\]
-\end{definition*}
+\end{definition}
 
 \begin{note}
 Eventuali fattori moltiplicativi non ci interessano.
@@ -300,21 +303,21 @@ La notazione si legge \(f(n)\) è \enquote{O grande} di \(g(n)\) e si scrive \(f
 Questo è un abuso di notazione, dovemmo scrivere \(f(n) \in \Omicron(g(n))\), in quanto \(\Omicron\) è un insieme (più precisamente una famiglia di funzioni).
 Questa notazione è però diventata d'uso comune, poiché ci si può fare una specie di aritmetica sopra, infatti è la notazione che troverete nella letteratura e sta a significare che \(g(n)\) è un limite asintotico superiore per \(f(n)\), ossia che \(f(n)\) cresce al più (al massimo) come \(g(n)\).
 
-\begin{definition*}[notazione \(\Omega\)]
+\begin{definition}[notazione \(\Omega\)]
 Sia \(g(n)\) una funzione di costo; indichiamo con \(\Omega(g(n))\) l'insieme delle funzioni \(f(n)\) tali per cui:
 \[
 	\exists c > 0, \exists m \geqslant 0\,\colon \alert{f(n) \geqslant cg(n)}, \forall n \geqslant m
 \]
-\end{definition*}
+\end{definition}
 
 La notazione si legge \(f(n)\) è \enquote{Omega grande} (nella letteratura big-O) di \(g(n)\), si scrive \(f(n) = \Omega(g(n))\) e sta a significare che \(g(n)\) è un limite asintotico inferiore per \(f(n)\), ossia che \(f(n)\) cresce almeno quanto (non meno di) \(g(n)\).
 
-\begin{definition*}[notazione \(\Theta\)]
+\begin{definition}[notazione \(\Theta\)]
 Sia \(g(n)\) una funzione di costo; indichiamo con \(\Theta[g(n)]\) l'insieme delle funzioni \(f(n)\) tali per cui:
 \[
 	\exists c > 0, \exists m \geqslant 0\,\colon \alert{c_1g(n) \leqslant f(n) \leqslant c_2g(n)}, \forall n \geqslant m
 \]
-\end{definition*}
+\end{definition}
 
 La notazione si legge \(f(n)\) è \enquote{Theta} di \(g(n)\), si scrive \(f(n) = \Theta[g(n)]\) e sta a significare che \(f(n)\) cresce \emph{esattamente} come \(g(n)\) al di là di fattori moltiplicativi.
 Nota che \(f(n) = \Theta[g(n)]\) avviene se e solo se \(f(n) = \Omicron(g(n))\) e \(f(n) = \Theta[g(n)]\).
@@ -327,18 +330,18 @@ Nota che \(f(n) = \Theta[g(n)]\) avviene se e solo se \(f(n) = \Omicron(g(n))\) 
 
 \section{Complessità di un algoritmo e di un problema}
 
-\begin{definition*}[complessità in tempo di un \alert{algoritmo}]
+\begin{definition}[complessità in tempo di un algoritmo]
 La più grande quantità di tempo richiesta \emph{per un input} di dimensione \(n\).
-\end{definition*}
+\end{definition}
 \begin{itemize}
 	\item \(\Omicron(f(n))\): per tutti gli input, l'algoritmo costa al più \(f(n)\);
 	\item \(\Omega(f(n))\): per tutti gli input, l'algoritmo costa almeno \(f(n)\);
 	\item \(\Theta[f(n)]\): l'algoritmo richiede \(\Theta[f(n)]\) per tutti gli input.
 \end{itemize}
 
-\begin{definition*}[complessità in tempo di un \alert{problema computazionale}]
+\begin{definition}[complessità in tempo di un problema computazionale]
 La complessità in tempo relativa \emph{a tutte le possibili soluzioni}.
-\end{definition*}
+\end{definition}
 \begin{itemize}
 	\item \(\Omicron(f(n))\): complessità del miglior algoritmo che risolve il problema;
 	\item \mbox{\(\Omega(f(n))\): dimostrare che nessun algoritmo può risolvere il problema in tempo inferiore a \(\Omega(f(n))\)};
@@ -560,17 +563,17 @@ Esiste un metodo più efficiente?
 
 \subsection*{Limiti alla complessità di un problema}
 
-\begin{definition*}[limite superiore, \(\mathcal{O}(f(n))\)]
+\begin{definition}[limite superiore, \(\mathcal{O}(f(n))\)]
 Un problema ha complessità \(\mathcal{O}(f(n))\) \emph{se esiste almeno un algoritmo} che ha complessità \(\mathcal{O}(f(n))\).
-\end{definition*}
+\end{definition}
 
 \begin{note}
 Il problema della somma dei numeri binari ha complessità \(\Omicron(n)\).
 \end{note}
 
-\begin{definition*}[limite inferiore, \(\Omega(f(n))\)]
+\begin{definition}[limite inferiore, \(\Omega(f(n))\)]
 Un problema ha complessità \(\Omega(f(n))\) \emph{se tutti i possibili algoritmi} che lo risolvono hanno complessità \(\Omega(f(n))\).
-\end{definition*}
+\end{definition}
 
 \begin{note}
 Il problema della somma dei numeri binari ha complessità \(\Omega(n)\).
@@ -760,7 +763,7 @@ Un approccio banale (\foreign{na\"if}) è quello di cercare il minimo e metterlo
 \end{algorithm}
 
 \begin{figure}[H]\centering
-	\includegraphics{selection}
+	\includegraphics[width=.4\textwidth]{selection}
 	\caption[]{Funzinamento dell'algoritmo \selectionSort.}
 \end{figure}
 

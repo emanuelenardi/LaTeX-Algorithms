@@ -1,14 +1,3 @@
-class Pos {
-	Pos succ;	/** Prossimo elemento della lista */
-	Pos pred;	/** Precedente elemento della lista */
-	Object v;	/** Valore */
-
-	Pos(Object v) {
-		succ = pred = null;
-		this.v = v;
-	}
-}
-
 public class List {
 	private Pos head;		/** Primo elemento della lista */
 	private Pos tail;		/** Ultimo elemento della lista */
@@ -48,13 +37,13 @@ public class List {
 		Pos t = new Pos(v);
 
 		if (head == null) {
-			head = tail = t; // Inserisci in una lista vuota
+			head = tail = t; // inserisci in una lista vuota
 		} else if (pos == null) {
-			t.pred = tail; // Inserisci alla fine
+			t.pred = tail; // inserisci alla fine
 			tail.succ = t;
 			tail = t;
 		} else {
-			t.pred = pos.pred; // Iserimento davanti ad una posizione esistente
+			t.pred = pos.pred; // inserimento davanti ad una posizione esistente
 			if (t.pred != null)
 				t.pred.succ = t;
 			else
@@ -62,8 +51,7 @@ public class List {
 
 			t.succ = pos;
 			pos.pred = t;
-	}
-
+		}
 		return t;
 	}
 }

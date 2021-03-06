@@ -28,10 +28,8 @@
 
 % NOTE per avere i parametri allineati a sx con un box di dimensione pari alla stringa più lunga
 \usepackage{eqparbox}
-\NewDocumentCommand{\params}{ mo }
-	{ \tcp{\eqparbox{params}{\(#1\):} #2}\vspace{-3pt} }
-
-\newcommand{\slide}[1]{\footnotesize\fbox{#1}}
+\NewDocumentCommand{\params}{ m o }
+	{ \tcp{\eqparbox{parameters}{\(#1\):} #2}\vspace{-3pt} }
 
 % NOTE 🔖 [Big O and related notations](texblog.org/2014/06/24/)
 \NewDocumentCommand{\Omicron}{o}{

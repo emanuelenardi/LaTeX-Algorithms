@@ -2,7 +2,10 @@
 
 \ifsubfile
 \pagestyle{plain}
-\setcounter{chapter}{13}
+\setcounter{chapter}{14}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -91,7 +94,7 @@ L'idea è definire problemi a mano a mano sempre più piccoli.
 E definirli in base agli indici degli intervalli rimanenti.
 \end{note}
 
-\begin{theorem*}
+\begin{theorem}
 Supponiamo che \(A[i,j]\) sia una (poiché non è unica) soluzione ottimale di \(S[i,j]\) e sia \(k\) un (qualunque) intervallo che appartiene a \(A[i,j]\); suddividiamo quindi il problema \(S[i,j]\) in due sottoproblemi:
 
 \begin{itemize}
@@ -105,7 +108,7 @@ Supponiamo che \(A[i,j]\) sia una (poiché non è unica) soluzione ottimale di \
 	\item \(A[i,j] \cap S[i,k]\) è la soluzione ottimale di \(S[i,k]\)
 	\item \(A[i,j] \cap S[k,j]\) è la soluzione ottimale di \(S[k,j]\)
 \end{itemize}
-\end{theorem*}
+\end{theorem}
 
 \begin{proof}[Dimostrazione per assurdo]
 Se esistesse una soluzione migliore al problema \(S[i,j]\), diciamo \(A'[i,k]\) e la sostituissi ad \(A[i,k]\) ottenerrei una soluzione migliore anche al mio problema originale, ma questo non è possibile poiché se ottenessi una soluzione migliore allora \(A[i,k]\) non sarebbe una soluzione ottima, il che è assurdo.
@@ -148,7 +151,7 @@ Questa complessità era data dall'ordinamento del vettore che avveniva prima che
 Tuttavia è possibile migliorare il nostro algoritmo cercando una soluzione ingorda al nostro problema evitando di valutare tutte le possibili soluzioni.
 Infatti non è necessario analizzare tutti i possibili valori di \(k\).
 
-\begin{theorem*}[scelta ingorda]
+\begin{theorem}[scelta ingorda]
 
 Sia \(S[i,j]\) un sottoproblema non vuoto, ed indentifichiamo \(m\) l'intervallo di \(S[i,j]\) con il \textcolor{darker}{minor tempo di fine}, allora:
 
@@ -157,7 +160,7 @@ Sia \(S[i,j]\) un sottoproblema non vuoto, ed indentifichiamo \(m\) l'intervallo
 	\item \(m\) è compreso in \underline{qualche} soluzione ottima di \(S[i,j]\).
 \end{enumerate}
 
-\end{theorem*}
+\end{theorem}
 
 \subsection{Dimostrazione che è una soluzione ottima}
 
@@ -350,14 +353,14 @@ Applicando l'algoritmo \emph{Shortest Job First}:
 
 dove il tempo di complemento è pari a \[\frac{1+4+8+14}{4} = \frac{27}{4} = 6.75 < 8.5\]
 
-\begin{theorem*}[Scelta greedy]
+\begin{theorem}[Scelta greedy]
 Esiste una soluzione ottima \(A\) in cui il job con minor tempo di fine \(m\) si trova in prima posizione (\(A[1] = m)\).
-\end{theorem*}
+\end{theorem}
 
-\begin{theorem*}[Sottostruttura ottima]
+\begin{theorem}[Sottostruttura ottima]
 Sia \(A\) una soluzione ottima di un problema con \(n\) job, in cui il job con minor tempo di fine \(m\) si trova in prima posizione.
 La permutazione dei seguenti \(n-1\) job in \(A\) è una soluzione ottima al sottoproblema in cui il job \(m\) non viene considerato.
-\end{theorem*}
+\end{theorem}
 
 \subsection{Dimostrazione}
 
@@ -485,9 +488,9 @@ Effettuo \(n\) volte operazioni che costano \(\log n\), come le operazioni di {\
 
 \subsection{Dimostrazione di correttezza}
 
-\begin{theorem*}
+\begin{theorem}
 L'output dell'algoritmo Huffman per un dato file è un codice a prefisso ottimo.
-\end{theorem*}
+\end{theorem}
 
 Scegliere i due elementi con la frequenza più bassa conduce sempre ad una soluzione ottimale.
 Dato un problema sull'alfabeto \(\Sigma\).
@@ -533,9 +536,9 @@ Non è detto che l'albero di copertura minimo sia univoco.
 L'idea è di accrescere un sottoinsieme \(A\) di archi in modo tale che venga sempre
 rispettata la seguente invariante: \(A\) è un sottoinsieme di qualche albero di connessione minimo.
 
-\begin{theorem*}[Arco sicuro]
+\begin{theorem}[Arco sicuro]
 Un arco \([u,v]\) è detto sicuro per \(A\) se \(A \cup \{[u,v]\}\) è ancora un sottoinsieme di qualche albero di connessione minimo.
-\end{theorem*}
+\end{theorem}
 
 \begin{algorithm}[H]
 \caption{Algoritmo generico per generare un albero di copertura minimo}

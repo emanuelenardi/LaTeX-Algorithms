@@ -6,6 +6,9 @@
 
 \pagestyle{plain}
 \setcounter{chapter}{2}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, synctex: no }
@@ -312,9 +315,9 @@ Equazione di ricorrenza:
 \`{E} possibile risolvere questa ricorrenza nel modo seguente:
 \[\begin{WithArrows}[displaystyle]
 T(n) &= n + 4T(\nicefrac{n}{2}) \Arrow{\(4T\left(\frac{n}{2} \cdot \frac{1}{2} \right) + \frac{n}{2}\)}\\
-	 &{\color{lightgray}= n + 4\left(4T\left(\frac{n}{2} \cdot \frac{1}{2}\right) + \frac{n}{2} \right)} \Arrow[tikz={color=lightgray}]{semplifico}\\
+	 &{\color{gray}= n + 4\left(4T\left(\frac{n}{2} \cdot \frac{1}{2}\right) + \frac{n}{2} \right)} \Arrow[tikz={color=gray}]{semplifico}\\
 	 &= n + 4\nicefrac{n}{2} + 16 T(\nicefrac{n}{4}) \Arrow{\(4T\left(\frac{n}{4} \cdot \frac{1}{2} \right) + \frac{n}{4}\), \(4\nicefrac{n}{2} = 2n\)}\\
-	 &{\color{lightgray} n + 2n + 16\left(4T\left(\frac{n}{4} \cdot \frac{1}{2}\right) + \frac{n}{4} \right)} \Arrow[tikz={color=lightgray}]{semplifico}\\
+	 &{\color{gray} n + 2n + 16\left(4T\left(\frac{n}{4} \cdot \frac{1}{2}\right) + \frac{n}{4} \right)} \Arrow[tikz={color=gray}]{semplifico}\\
 	 &= n + 2n + 16\nicefrac{n}{4} + 64 T(\nicefrac{n}{8}) \Arrow[jump=2]{svolgo \(\log n\) operazioni}\\
 	 &\phantom{= n + 2n + 16}\vdots \\
 	 &= \underbracket[0.01mm]{n + 2n + 4n + 8 n + \cdots + 2^{\log n-1}n}_{sommatoria} + 4^{\log n} T(1) \Arrow{raccolgo}\\
@@ -831,7 +834,7 @@ Nella versione estesa, che vedremo fra poco, vedremo che i parametri \(a\) e \(b
 
 Prendiamo ad esempio il primo esercizio \(T(n) = 4T(\frac{n}{2})\) e vediamo che si può risolvere semplicemente calcolando \(\alpha = \log_b a = \log_2 4 = 2 > \beta = 1\), possiamo quindi concludere che \(T(n) = \Theta(n^{\alpha}) = \Theta(n^2)\).
 
-\begin{proof}[Dimostrazione del teorema delle ricorrenze lineari con partizione bilanciata]
+\begin{proof}[teorema delle ricorrenze lineari con partizione bilanciata]
 Assumiamo che \(n\) sia una potenza intera di \(b\), ossia che \(n = b^k\), \(k = \log_b n\) poiché ci permetterà di semplificare i calcoli successivi ed è ininfluente sul risultato.
 Ad esempio supponiamo che l'input abbia dimensione \(b^k + 1\) (\(2^8 + 1 = 257\) bit), se estendiamo l'input fino ad una dimensione \(b^{k+1}\) (\(2^8+1 = 512\) bit, facendo del \foreign{padding}, l'input sarebbe stato esteso al massimo di un fattore costante \(b\) (\(2\) nel nostro caso), il che è ininfluente al fine della complessità computazionale.
 
@@ -938,7 +941,7 @@ Studiamole una per una.
 Fine dimostrazione.
 \end{proof}
 
-\begin{theorem*}[ricorrenze lineari con partizione bilanciata estesa]
+\begin{theorem}[ricorrenze lineari con partizione bilanciata estesa]
 Sia \(a \geqslant 1\), \(b > 1\), \(f(n)\) asintoticamente positiva, e sia
 \[
 	T(n) =
@@ -953,7 +956,7 @@ Sono dati tre casi:
 	\item \(f(n) = \Theta(n^\alpha)\) allora \(T(n) = \Theta(f(n)\log n)\);
 	\item \(\exists \varepsilon > 0 \,\colon f(n) = \Omicron(n^{\alpha + \varepsilon}) \land\\\exists c \,\colon 0 < c < 1, \exists m > 0 \,\colon\\a f(\frac{n}{b}) \leqslant c f(n), \forall n \geqslant m\) allora \(T(n) = \Theta(f(n))\).
 \end{enumerate}
-\end{theorem*}
+\end{theorem}
 
 Non vedremo la dimostrazione poiché è troppo complessa.
 
@@ -971,7 +974,7 @@ Le soluzioni sono indicate fra parentesi.
 	\item \(T(n) = 2T(\frac{n}{2}) + n\log n\) \hfill[nessun caso applicabile]
 \end{itemize}
 
-\begin{theorem*}[ricorrenze lineari di ordine costante]
+\begin{theorem}[ricorrenze lineari di ordine costante]
 Siano \(\{a_1, a_2, \dots, a_n\}\) costanti intere non negative, con \(h\) costante positiva, \(c\) e \(\beta\) costanti reali tali che \(c > 0\) e \(\beta \geqslant 0\), e sia \(T(n)\) definita dalla relazione di ricorrenza:
 \[
 	T(n) =
@@ -985,7 +988,7 @@ Posto \(a = \sum_{1 \leqslant i \leqslant h} a_i\), allora:
 	\item \(T(n)\) è \(\Theta(n^{\beta+1})\), se \(a = 1\);
 	\item \(T(n)\) è \(\Theta(a^n n^{\beta})\), se \(a \geqslant 2\).
 \end{enumerate}
-\end{theorem*}
+\end{theorem}
 
 \paragraph{Commento}
 Questo teorema tratta ricorrenze lineari \emph{di ordine costante} perché tutte le volte rimuoviamo dalla dimensione di input \(n\) una quantità costante.
@@ -997,6 +1000,160 @@ Le soluzioni sono indicate fra parentesi.
 	\item \(T(n) = T(n-10) + n^2\) \hfill[costo polinomiale]
 	\item \(T(n) = T(n-2) - T(n-1) + 1\) \hfill[costo esponenziale]
 \end{itemize}
+
+\section{Algoritmo della somma massimale di un sottovettore}
+
+Date le nostre nuove conoscenze possiamo calcolare con precisione la complessità delle varie versioni degli algoritmi proposti per la soluzione al problema della somma massimale di un sottovettore.
+
+\subsubsection*{Complessità della prima versione}
+
+\begin{code}
+\begin{minted}{cpp}
+int maxsum1(int[] A, int n) {
+	int maxSoFar = 0;
+	for (int i = 0; i < n; i++) {
+		for (int j = i; j < n; j++) {
+			int sum = 0;
+			for (int k = i; k <= j; k++) {
+				sum = sum + A[k];
+			}
+			maxSoFar = max(maxSoFar, sum);
+		}
+	}
+	return maxSoFar;
+}
+\end{minted}
+% \captionof{listing}{Versione 1}
+% \label{code:c-code}
+\end{code}
+
+La complessità dell'algoritmo può essere approssimata come segue (contando il numero di esecuzioni della riga più interna):
+\[\begin{WithArrows}[displaystyle]
+T(n) = \sum_{i=0}^{n-1} \sum_{j=i}^{n-1} (j - i + 1)
+\end{WithArrows}\]
+
+Vogliamo provare che \(T(n) = \Omicron(n^3)\).
+\begin{proof}
+\textbf{limite superiore}:
+\(\exists c_2 > 0, \exists m \geqslant 0 : T(n) \leqslant c_2 n^3\), \(\forall n \geqslant m\).
+\[\begin{WithArrows}[displaystyle]
+T(n) &= \sum_{i=0}^{n-1} \sum_{j=i}^{n-1} (j - i + 1) \Arrow{spiegazione}\\
+	 &\leqslant \sum_{i=0}^{n-1} \sum_{j=i}^{n-1} n \Arrow{spiegazione}\\
+	 &\leqslant \sum_{i=0}^{n-1} \sum_{j=0}^{n-1} n \Arrow{spiegazione}\\
+	 &=\sum_{i=0}^{n-1} n^2 \Arrow{spiegazione}\\
+	 &= n^3 \leqslant c_2 n^3
+\end{WithArrows}\]
+Questa disequazione è vera per \(n \geqslant m = 0\) and \(c_2 \geqslant 1\).
+\end{proof}
+
+Vogliamo provare che \(T(n) = \Omega(n^3)\).
+\begin{proof}
+\textbf{limite inferiore}:
+\(\exists c_1 > 0, \exists m \geqslant 0 : T(n) \leqslant c_1 n^3\), \(\forall n \geqslant m\).
+\[\begin{WithArrows}[displaystyle]
+T(n) &= \sum_{i=0}^{n-1} \sum_{j=i}^{n-1} (j - i + 1) \\
+	 &\geqslant \sum_{i=0}^{\nicefrac{n}{2}} \sum_{j=i}^{n+\nicefrac{n}{2}-1} (j - i + 1) \Arrow{spiegazione}\\
+	 &= \sum_{i=0}^{\nicefrac{n}{2}} \sum_{j=i}^{n+\nicefrac{n}{2}-1} \nicefrac{n}{2} \Arrow{spiegazione}\\
+	 &= \sum_{i=0}^{\nicefrac{n}{2}} \nicefrac{n^2}{4} \geqslant \nicefrac{n^3}{8} \geqslant c_1 n^3
+\end{WithArrows}\]
+Questa disequazione è vera per \(n \geqslant m = 0\) and \(c_1 \geqslant 8\).
+\end{proof}
+
+\subsubsection*{Complessità della seconda versione}
+
+\begin{code}
+\begin{minted}{cpp}
+int maxsum2(int[] A, int n) {
+	int maxSoFar = 0;
+	for (int i=0; i < n; i++) {
+		int sum = 0;
+		for (int j=i; j < n; j++) {
+			sum = sum + A[j];
+			maxSoFar = max(maxSoFar, sum);
+		}
+	}
+	return maxSoFar;
+}
+\end{minted}
+% \captionof{listing}{Versione 2}
+% \label{code:version-2}
+\end{code}
+
+La complessità di questo algoritmo può essere approssimata come segue (stiamo contando il numero di passi nel ciclo più interno):
+\[\begin{WithArrows}[displaystyle]
+T(n) = \sum_{i=0}^{n-1} n-i
+\end{WithArrows}\]
+
+Vogliamo provare che \(T(n) = \Theta(n^2)\)
+
+\begin{proof}
+\[\begin{WithArrows}[displaystyle]
+T(n) &= \sum_{i=0}^{n-1} n-i \Arrow{spiegazione}\\
+     &= \sum_{i=1}^{n} i \Arrow{spiegazione}\\
+     &= \frac{n (n + 1)}{2} = \Theta(n^2)
+\end{WithArrows}\]
+Questo non richiede ulteriori spiegazioni.
+\end{proof}
+
+\subsubsection*{Complessità della terza versione}
+
+\begin{code}
+\begin{minted}{cpp}
+int maxsum_rec(int[] A, int i, int j) {
+    if (i == j)
+      return max(0, A[i]);
+
+    int m = (i + j) / 2;
+    int maxs = maxsum_rec(A, i, m);
+    int maxd = maxsum_rec(A, m + 1, j);
+    int maxss = 0;
+    int sum = 0;
+
+    for (int k = m; k >= i; k--) {
+      sum = sum + A[k];
+      maxss = max(maxss, sum);
+    }
+
+	int maxdd = 0;
+    sum = 0;
+    for (int k = m + 1; k <= j; k++) {
+      sum = sum + A[k];
+      maxdd = max(maxdd, sum);
+    }
+
+    return max(max(maxs, maxd), maxss + maxdd);
+}
+\end{minted}
+% \captionof{listing}{Versione 3}
+% \label{code:version-3}
+\end{code}
+
+Per questo, definiamo la equazione di ricorrenza:
+\[\begin{WithArrows}[displaystyle]
+T(n) = 2T(\nicefrac{n}{2}) + n
+\end{WithArrows}\]
+Utilizzando il teorema, possiamo vedere che \(\alpha = \log_2 2 = 1\) e \(\beta = 1\), quindi \(T(n) = \Theta(n \log n)\).
+
+\subsubsection*{Complessità della quarta versione}
+
+\begin{code}
+\begin{minted}{cpp}
+int maxsum4(int A[], int n) {
+	int maxSoFar = 0;
+	int maxHere = 0;
+	for (int i = 0; i < n; i++) {
+		maxHere = max(maxHere + A[i], 0);
+		maxSoFar = max(maxSoFar, maxHere);
+	}
+
+	return maxSoFar;
+}
+\end{minted}
+% \captionof{listing}{Versione 4}
+% \label{code:version-4}
+\end{code}
+
+\`{E} facile vedere che la complessità di questa versione è \(\Theta(n)\).
 
 \ifsubfile
 \end{document}

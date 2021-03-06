@@ -2,7 +2,10 @@
 
 \ifsubfile
 \pagestyle{plain}
-\setcounter{chapter}{10}
+\setcounter{chapter}{13}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -83,14 +86,14 @@ Non confonderlo con gli alberi di copertura di peso minimo.
 \end{note}
 
 % NOTE è stato rimosso nelle nuove trasparenze?
-% \begin{definition}[Albero di copertura, \foreign{spanning tree}]
-% Dato un grafo \(G = (V, E)\) non orientato e connesso, un albero di copertura \(G\) è un sottografo di \(T = (V, E_T)\) tal che:
-% \begin{itemize}
-% 	\item T è un albero;
-% 	\item \(E_T \subseteq E\);
-% 	\item \(T\) contiene tutti i vertici di \(G\).
-% \end{itemize}
-% \end{definition}
+\begin{definition}[Albero di copertura, \foreign{spanning tree}]
+Dato un grafo \(G = (V, E)\) non orientato e connesso, un albero di copertura \(G\) è un sottografo di \(T = (V, E_T)\) tal che:
+\begin{itemize}
+	\item T è un albero;
+	\item \(E_T \subseteq E\);
+	\item \(T\) contiene tutti i vertici di \(G\).
+\end{itemize}
+\end{definition}
 
 \paragraph{Soluzione ammissibile}
 Una soluzione \emph{ammissibile} può essere descritta da un \emph{albero di copertura \(T\)} radicato in \(s\) e da un \emph{vettore delle distanze \(d\)}, i cui valori \(d[u]\) rappresentano il costo del cammino da \(s\) a \(u\) in \(T\).
@@ -301,6 +304,7 @@ Per \emph{grafi densi} non conviene utilizzare uno heap binario in quanto \(m = 
 Sfruttando un heap di fibonacci l'operazione di \heapDecrease ha costo ammortizzato costante; così facendo hanno abbassato la complessità a \(\Omicron(m + n \log n)\).
 Per \emph{grafi sparsi} produce un miglioramento nella complessità.
 
+\newpage
 \section{Algoritmo di Bellman-Ford-Moore}
 
 \begin{note}
@@ -412,54 +416,57 @@ Si utilizza quindi l'ordine topologico.
 	\input{bellman-dag}
 \end{algorithm}
 
+\newpage
 \subsection{Riassumendo}
 
 \begin{table}[H]\centering
-	\caption{Quale complessità preferire?}%
-	\label{tab:complexity-compared}
-	\begin{tabular}{@{} *{4}{l} @{}}\toprule
-			\textbf{Algoritmo} & \textbf{Complessità} & \textbf{Input}\\
-		\midrule
-			Dijkstra		& \(\Omicron(n^2)\)				& Pesi positivi, grafi denso  \\
-		\lightrule
-			Johnson			& \(\Omicron(m \log n)\)		& Pesi positivi, grafi sparso \\
-		\lightrule
-			Fredman-Tarjan	& \(\Omicron(m + n \log n)\)	& Pesi positivi, grafi denso, dimensioni molto grandi \\
-		\lightrule
-			Bellman-Ford	& \(\Omicron(m \cdot n)\)		& Pesi negativi \\
-							& \(\Omicron(m + n)\)			& DAG			\\
-						\lightrule
-			BFS				& \(\Omicron(m + n)\)			& Senza pesi	\\
-		\bottomrule
-	\end{tabular}
+\caption{Quale complessità preferire?}%
+\label{tab:complexity-compared}
+\begin{tabularx}{\textwidth}{@{} *{4}{l} @{}}
+	\toprule
+		\textbf{Algoritmo} & \textbf{Complessità} & \textbf{Input}\\
+	\midrule
+		Dijkstra		& \(\Omicron(n^2)\)				& Pesi positivi, grafi denso  \\
+	\lightrule
+		Johnson			& \(\Omicron(m \log n)\)		& Pesi positivi, grafi sparso \\
+	\lightrule
+		Fredman-Tarjan	& \(\Omicron(m + n \log n)\)	& Pesi positivi, grafi denso, dimensioni molto grandi \\
+	\lightrule
+		Bellman-Ford	& \(\Omicron(m \cdot n)\)		& Pesi negativi \\
+						& \(\Omicron(m + n)\)			& DAG			\\
+					\lightrule
+		BFS				& \(\Omicron(m + n)\)			& Senza pesi	\\
+	\bottomrule
+\end{tabularx}
 \end{table}
 
 \subsection{Cammini minimi, sorgente multipla}
 
 Vogliamo cercare i cammini minimi fra tutti i nodi.
 
-\begin{table}[H]\centering
-	\caption{Quale complessità preferire?}%
-	\label{tab:complexity-compared}
-	\begin{tabular}{@{} *{3}{l} @{}}
-		\toprule
-			\textbf{Algoritmo} & \textbf{Complessità} & \textbf{Input}\\
-		\midrule
-			Pesi positivi, grafo denso & \(\Omicron(n \cdot n^2)\) & Applicazione ripetuta (\(n\)) dell'algoritmo di Dijkstra \\
-		\lightrule
-			Pesi positivi, grafo sparso & \(O(n \cdot (m \log n))\) & Applicazione ripetuta dell'algoritmo di Johnson \\
-		\lightrule
-			Pesi negativi & \(O(n \cdot nm)\) & Applicazione ripetuta di Bellman-Ford (sconsigliata) \\
-		\lightrule
-			Pesi negativi, grafo denso & \(O(n^3)\) & Algoritmo di \textbf{Floyd e Warshall} \\
-		\lightrule
-			Pesi negativi, grafo sparso & \(O(nm \log n)\) & Algoritmo di \textbf{Johnson per sorgente multipla}\\
-		\bottomrule
-	\end{tabular}
+\begin{table}[!ht]
+\caption{Quale complessità preferire?}%
+\label{tab:complexity-compared}
+\begin{tabularx}{\textwidth}{@{} *{3}{l} @{}}
+	\toprule
+	\textbf{Algoritmo} & \textbf{Complessità} & \textbf{Input}\\
+	\midrule
+	Pesi positivi, grafo denso & \(\Omicron(n \cdot n^2)\) & Applicazione ripetuta (\(n\)) dell'algoritmo di Dijkstra \\
+	\lightrule
+	Pesi positivi, grafo sparso & \(O(n \cdot (m \log n))\) & Applicazione ripetuta dell'algoritmo di Johnson \\
+	\lightrule
+	Pesi negativi & \(O(n \cdot nm)\) & Applicazione ripetuta di Bellman-Ford (sconsigliata) \\
+	\lightrule
+	Pesi negativi, grafo denso & \(O(n^3)\) & Algoritmo di \textbf{Floyd e Warshall} \\
+	\lightrule
+	Pesi negativi, grafo sparso & \(O(nm \log n)\) & Algoritmo di \textbf{Johnson per sorgente multipla}\\
+	\bottomrule
+\end{tabularx}
 \end{table}
 
 L'algoritmo di Bellman-Ford è sconsigliato per grafi densi perché può arrivare ad avere una complessità di \(\Omicron(n^4)\), mentre l'algoritmo di Floyd e Warshall ha una complessità di \(\Omicron(n^3)\) indipendentemente dalla forma del grafo.
 
+\newpage
 \section{Algoritmo di Floyd-Warshall}
 
 Utilizza la programmazione dinamica.

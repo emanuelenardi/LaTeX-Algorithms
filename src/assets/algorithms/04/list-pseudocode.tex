@@ -68,7 +68,7 @@
 \tcp{posso fare queste operazioni essendo sicuro}
 \tcp{di avere sempre un predecessore}
 	\prototype{\Pos \listInsert{\Pos p, \Item v}}{
-	\List \(t = \listConstructor\)
+	\List \(t\) \Assign \new \listConstructor\;
 	\(t.\Value = v\)\;
 	\(t.\Pred = p.\Pred\)\;
 	\(p.\Pred.\Succ = t\)\;

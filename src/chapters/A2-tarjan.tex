@@ -3,8 +3,10 @@
 \ifsubfile
 
 \appendix
-\setcounter{chapter}{1}
 \pagestyle{plain}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }

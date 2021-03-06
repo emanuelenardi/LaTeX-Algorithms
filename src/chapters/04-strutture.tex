@@ -7,15 +7,18 @@
 
 \pagestyle{plain}
 \setcounter{chapter}{3}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, synctex: no }
 \begin{document}
 \fi
 \chapter{Strutture dati}
-\epigraph{``Picking the wrong data structure for the job can be disastrous in terms of performance.
-		    Identifying the very best data structure is usually not as critical, because there can be several choices that perform similarly.''}%
-		 {--- \textup{\textsc{Steven S.\ Skiena, The Algorithm Design Manual (1997)}}}
+\epigraph{\enquote{Picking the wrong data structure for the job can be disastrous in terms of performance.
+				   Identifying the very best data structure is usually not as critical, because there can be several choices that perform similarly.}}%
+		 {--- \textsc{Steven S.\ Skiena}, \emph{The Algorithm Design Manual} (1997)}
 
 \section{Strutture dati astratte}
 
@@ -105,13 +108,15 @@ Le operazioni ammesse su una sequenza sono:
 \end{algorithm}
 
 \clearpage
-\subsection{Implementazione delle sequenze}
+\subsection{Implementazioni delle sequenze}
 
-Di seguito vengono presentati alcuni esempi d'utilizzo dell'implementazione delle sequenze nei diversi linguaggi di programmazione utilizzati oggigiorno.
+Nei~\cref{lst:java-sequence,lst:cpp-sequence,lst:python-sequence} vengono presentati alcuni esempi d'utilizzo dell'implementazione delle sequenze nei linguaggi di programmazione più utilizzati.
 
-\begin{code}
-\captionof{listing}{Implementazione delle liste in Java}
-% \label{code:java-sequence}
+% % https://tex.stackexchange.com/questions/24454
+% \setlength{\intextsep}{2pt} % Vertical space above & below [h] floats
+\begin{listing}[h]
+\caption{Implementazione delle liste in Java}%
+\label{lst:java-sequence}%
 \begin{minted}{java}
 List<String> lista = new LinkedList<String>();
 lista.add("two");
@@ -120,11 +125,12 @@ lista.addLast("three");
 
 Result: [ "one", "two", "three" ]
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
-\begin{code}
-\captionof{listing}{Implementazione delle liste in \texttt{C++}}
-% \label{code:cpp-sequence}
+\begin{listing}[h]
+\caption{Implementazione delle liste in \texttt{C++}}%
+\label{lst:cpp-sequence}
 \begin{minted}{cpp}
 std::list<int> lista;
 lista.push_front(2);
@@ -133,18 +139,20 @@ lista.push_back(3);
 
 Result: [1,2,3]
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
-\begin{code}
-\captionof{listing}{Implementazione delle liste in Python}
-% \label{code:python-sequence}
+\begin{listing}[h]
+\caption{Implementazione delle liste in Python}%
+\label{lst:python-sequence}
 \begin{minted}{python}
 lista = ["one", "three"]
 lista.insert(1, "two")
 
 Result: [ 'one', 'two', 'three' ]
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
 \section{Insiemi}
 
@@ -164,9 +172,13 @@ Le operazioni ammesse su un'insieme sono:
 	\input{set-interface}
 \end{algorithm}
 
-\begin{code}
-\captionof{listing}{Implementazione degli insiemi in Java}
-% \label{code:java-set}
+\subsection{Implementazioni degli insiemi}
+
+Nei~\cref{lst:java-set,lst:cpp-set,lst:python-set} vengono presentati alcuni esempi d'utilizzo dell'implementazione degli insiemi nei linguaggi di programmazione più utilizzati.
+
+\begin{listing}[h]
+\caption{Implementazione degli insiemi in Java}%
+\label{lst:java-set}
 \begin{minted}{java}
 List<String> lista = new LinkedList<String>();
 Set<String> docenti = new TreeSet<>();
@@ -176,11 +188,12 @@ docenti.add("Alessio");
 
 Result: { "Alberto", "Alessio", "Cristian" }
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
-\begin{code}
-\captionof{listing}{Implementazione degli insiemi in \texttt{C++}}
-% \label{code:cpp-set}
+\begin{listing}[h]
+\caption{Implementazione degli insiemi in \texttt{C++}}%
+\label{lst:cpp-set}
 \begin{minted}{cpp}
 std::set<std::string> frutta;
 frutta.insert("mele");
@@ -191,11 +204,12 @@ frutta.remove("mele")
 
 Result: { "banane", "pere" }
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
-\begin{code}
-\captionof{listing}{Implementazione degli insiemi in Python}
-% \label{code:python-set}
+\begin{listing}[h]
+\caption{Implementazione degli insiemi in Python}%
+\label{lst:python-set}
 \begin{minted}{python}
 items = { "rock", "paper", "scissors", "rock" }
 print(items)
@@ -206,7 +220,8 @@ Result: { "rock", "paper", "scissors" }
 False
 True
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
 \section{Dizionari}
 
@@ -228,20 +243,25 @@ Le operazioni ammesse sui dizionari sono:
 	\input{dict-interface}
 \end{algorithm}
 
-\begin{code}
-\captionof{listing}{Implementazione dei dizionari in Java}
-% \label{code:java-liste}
+\subsection{Implementazioni dei dizionari}
+
+Nei~\cref{lst:java-dictionary,lst:cpp-dictionary,lst:python-dictionary} vengono presentati alcuni esempi d'utilizzo dell'implementazione dei dizionari nei linguaggi di programmazione più utilizzati.
+
+\begin{listing}[H]
+\captionof{listing}{Implementazione dei dizionari in Java}%
+\label{lst:java-dictionary}
 \begin{minted}{java}
 Map<String, String> capoluoghi = new HashMap<>();
 capoluoghi.put("Toscana", "Firenze");
 capoluoghi.put("Lombardia", "Milano");
 capoluoghi.put("Sardegna", "Cagliari");
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
-\begin{code}
-\captionof{listing}{Implementazione dei dizionari in \texttt{C++}}
-% \label{code:cpp-liste}
+\begin{listing}[H]
+\caption{Implementazione dei dizionari in \texttt{C++}}%
+\label{lst:cpp-dictionary}
 \begin{minted}{cpp}
 std::map<std::string, int> wordcounts;
 std::string s;
@@ -249,11 +269,12 @@ std::string s;
 while (std::cin >> s && s != "end")
   ++wordcounts[s];
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
-\begin{code}
-\captionof{listing}{Implementazione dei dizionari in Python}
-% \label{code:python-liste}
+\begin{listing}[H]
+\caption{Implementazione dei dizionari in Python}%
+\label{lst:python-dictionary}
 \begin{minted}{python}
 v = {}
 v[10] = 5
@@ -262,7 +283,8 @@ v[10]+v["alberto"]
 
 Result: 47
 \end{minted}
-\end{code}
+\end{listing}
+\vspace{-25pt}
 
 \section{Alberi}
 
@@ -292,8 +314,6 @@ La struttura dati grafo è composta da:
 	\item un insieme di coppie (ordinate oppure no) di nodi detti archi.
 \end{itemize}
 
-% TODO inserire l'immagine di un grafo semplice
-
 Tutte le operazioni su alberi e grafi ruotano attorno alla possibilità di effettuare visite su di essi, vedremo la specifica completa più avanti.
 
 \begin{note}
@@ -317,7 +337,7 @@ Esistono diverse implmentazioni della lista, le quali possono essere:
 	\item circolare o non circolare.
 \end{itemize}
 
-% TODO inserire immagine delle liste (da fare)
+% TODO inserire immagine delle liste
 
 \begin{algorithm}[H]
 	\caption{Struttura dati lista bidirezionale con sentinella in pseudocodice}
@@ -326,11 +346,25 @@ Esistono diverse implmentazioni della lista, le quali possono essere:
 
 Il costo delle operazioni di lettura, scrittura, inserimento e rimozione per questa struttura è \(\Omicron(1)\).
 
-\begin{code}
-	\captionof{listing}{Lista bidirezionale \emph{senza} sentinella in Java}
-	\label{code:java-lista-bidirezionale-sentinella}
+\begin{minted}{java}
+class Pos {
+	Pos succ;	/** Prossimo elemento della lista */
+	Pos pred;	/** Precedente elemento della lista */
+	Object v;	/** Valore */
+
+	Pos(Object v) {
+		succ = pred = null;
+		this.v = v;
+	}
+}
+\end{minted}
+
+% NOTE reso il codice spezzabile
+\begin{listing}[!p]
+	\caption{Lista bidirezionale \emph{senza} sentinella in Java}%
+	\label{lst:java-lista-bidirezionale-sentinella}%
 	\pathinputminted{java}{List.java}
-\end{code}
+\end{listing}
 
 \begin{figure}[H]
 	\centering
@@ -362,11 +396,11 @@ Le pile possono essere implementate come:
 	\input{stack-pseudocode}
 \end{algorithm}
 
-\begin{code}
-	\captionof{listing}{Pila basata su vettore circolare in Java}
-	\label{code:vector-stack}
+\begin{listing}[hp]
+	\caption{Pila basata su vettore circolare in Java}
+	\label{lst:vector-stack}
 	\pathinputminted{java}{VectorStack.java}
-\end{code}
+\end{listing}
 
 \clearpage
 \subsection{Coda}
@@ -387,18 +421,16 @@ Le code possono essere implementate come:
 	\item vettori circolari, il quale ha una dimensione limitata e crea un \foreign{overhead} più basso.
 \end{itemize}
 
-\begin{algorithm}[H][ht]
+\begin{algorithm}[H]
 	\caption{Struttura dati coda basata su vettore circolare in pseudocodice}
 	\input{queue-pseudocode}
 \end{algorithm}
 
-\begin{figure}[hp]
-\begin{code}
-	\captionof{listing}{Coda basata su vettore in Java}
-	\label{code:vector-queue}
+\begin{listing}[hp]
+	\caption{Coda basata su vettore in Java}%
+	\label{lst:vector-queue}
 	\pathinputminted{java}{VectorQueue.java}
-\end{code}
-\end{figure}
+\end{listing}
 
 \ifsubfile
 \end{document}

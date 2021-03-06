@@ -3,6 +3,9 @@
 \ifsubfile
 \pagestyle{plain}
 \setcounter{chapter}{0}
+\usepackage[
+    parfill=30pt, % default: 30pt
+]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
@@ -10,13 +13,13 @@
 \fi
 \chapter{Introduzione}
 
-\begin{definition*}[problema computazionale]
+\begin{definition}[problema computazionale]
 Dato un dominio di input e un dominio di output, un \emph{problema computazionale} è rappresentato dalla \textbf{relazione matematica} che associa un elemento del dominio in output ad ogni elemento del dominio di input.
-\end{definition*}
+\end{definition}
 
-\begin{definition*}[algoritmo]
+\begin{definition}[algoritmo]
 Dato un problema computazionale, un \emph{algoritmo} è un procedimento \textbf{effettivo}, espresso tramite un insieme di \textbf{passi elementari ben specificati} in un sistema \textbf{formale} di calcolo, che risolve il problema in tempo \textbf{finito}.
-\end{definition*}
+\end{definition}
 
 Un esempio classico, ma ingannevole, di algoritmo è quello della preparazione di una ricetta: l'input sono gli ingredienti, l'esecutore è il cuoco, l'algoritmo è la ricetta e l'output è rappresentato dal piatto cucinato.
 \`E ingannevole perché non esiste un modello formale del cuoco, ossia qualcosa che descriva esattamente cosa un cuoco può fare e quali sono i passi elementari dell'algoritmo.
@@ -91,7 +94,7 @@ Per questo motivo nel seguito utilizzeremo lo \enquote{Pseudo-codice}.
 
 In alcuni casi daremo anche per scontato alcuni passaggi, ad esempio scriveremo \enquote{ordina gli elementi} e non sarà di nostro interesse sapere quale sarà lo specifico algoritmo di ordinamento utilizzato.
 
-Esempi di Pseudo-codice sono i seguenti.
+Esempi di pseudocodice\index{pseudocodice} sono i seguenti.
 
 \begin{algorithm}[H]
 \caption{Implementazione na\"if della ricerca del minimo}
@@ -174,9 +177,9 @@ Nota che alcuni problemi non possono essere risolti, mentre alcuni vengono risol
 
 \subsection{Efficienza}
 
-\begin{definition*}[complessità di un algoritmo]
+\begin{definition}[complessità di un algoritmo]
 Analisi delle \emph{risorse} impiegate da un algoritmo per risolvere un problema, in funzione della \emph{dimensione} e della \emph{tipologia} dell'input.
-\end{definition*}
+\end{definition}
 Le risorse si possono categorizzare in:
 \begin{itemize}
     \item \textbf{tempo}: ossia il tempo impiegato per completare l'algoritmo (definiremo più avanti come lo misureremo);
@@ -293,17 +296,17 @@ Tutte le volte che scriveremo un logaritmo sarà da intendere con base 2. Siamo 
 
 Per valutare la correttezza di un algoritmo possiamo utilizzare il concetto di invariante.
 
-\begin{definition*}[invariante]
+\begin{definition}[invariante]
 Condizione sempre vera \emph{in un certo punto} del programma.
-\end{definition*}
+\end{definition}
 
-\begin{definition*}[invariante di ciclo]
+\begin{definition}[invariante di ciclo]
 Una condizione sempre vera all'inizio dell'iterazione di un ciclo.
-\end{definition*}
+\end{definition}
 
-\begin{definition*}[invariante di classe]
+\begin{definition}[invariante di classe]
 Una condizione sempre vera al termine dell'esecuzione di un metodo della classe.
-\end{definition*}
+\end{definition}
 
 Facciamo un esempio di invariante di ciclo, in quanto la utilizzeremo più avanti nella nostra trattazione.
 

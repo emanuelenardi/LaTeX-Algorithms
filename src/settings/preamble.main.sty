@@ -11,22 +11,36 @@
 % % NOTE impostazione dei percorsi globali
 \usepackage{./paths}
 
-% WARNING incompatibile con titlesec, resetta lo stile del TOC
-% \usepackage[subfigure]{tocloft}
-% \setlength{\cftfignumwidth}{3.2em}
+\usepackage[compact,explicit,sc]{titlesec}
+\usepackage{./redefinitions-chapter}
+\usepackage{./redefinitions-part}
 
-% WARNING interferisce con il TOC
+\usepackage[none]{tocbibind}
+% % https://tex.stackexchange.com/a/346097/127473
+% \let\oldaddcontentsline\addcontentsline
+% \newcommand{\hidefromtoc}{\renewcommand{\addcontentsline}[3]{}}
+% \newcommand{\writetotoc}{\let\addcontentsline\oldaddcontentsline}
+\usepackage{./pretty-toc}
+
+% WARNING interferisce con il TOC, non utilizzare
 % NOTE toglie l'intentazione e inserisce spaziatura tra paragrafi
 % \usepackage[
 %     parfill=30pt, % default: 30pt
 %     tocskip=0pt   % default: \parskip
 % ]{parskip}
 
-\usepackage[compact,explicit,sc]{titlesec}
-\usepackage{./redefinitions-chapter}
-\usepackage{./redefinitions-part}
-
-\usepackage{./pretty-toc}
+\usepackage{appendix}
+\renewcommand{\appendixname}{Appendice}
+\renewcommand{\appendixpagename}{Appendici}
+\renewcommand{\appendixpage}{%
+	\thispagestyle{empty}%
+	\null\vfill%
+	\begin{flushright}%
+	\fontsize{40}{40}\selectfont\scshape\appendixpagename%
+	\end{flushright}%
+	\vfill\null%
+	\thispagestyle{epigraph}
+	\clearpage}
 
 % WARNING da caricare presto
 \usepackage[subpreambles=false]{standalone}
@@ -37,10 +51,8 @@
 
 \usepackage{../libraries/set-geometry}
 
-% NOTE gestione delle pagine
-\usepackage{../libraries/set-pages}
-
-% NOTE in alcune parti del documento è ancora utilizzato, da rimuovere
+% NOTE in alcune parti del documento è ancora utilizzato
+% TODO rimuovere dipendenze e rimuovere pacchetto
 \usepackage{multicol}
 
 % IDEA pacchetti utili
@@ -69,6 +81,8 @@
 \colorlet{mathcolor}{blue}
 \colorlet{rose}{red!50!white}
 
+\usepackage{./pagestyles}
+
 % NOTE personalizzazione degli alberi
 \usepackage{../libraries/set-forest}
 
@@ -79,10 +93,6 @@
 % NOTE dovrebbe essere caricato dopo minted, ma minted crea problemi con la cache
 \usepackage[autostyle, italian=quotes]{csquotes}
 
-% TODO creare un indice
-% \usepackage{imakeidx}
-% \makeindex[columns=2, title={Indice alfabetico}]
-
 % NOTE utilizzati nei capitoli 13/14
 \usepackage{chronology}
 \usepackage{pgfgantt}
@@ -90,6 +100,8 @@
 % NOTE notazione matematica
 \usepackage{../libraries/set-math}
 
+% https://tex.stackexchange.com/a/585169/127473
+\usepackage{newfloat}
 % WARNING inserisce una voce 'indice' nel TOC
 % NOTE personalizzazione dell'aspetto degli algoritmi
 \usepackage{../libraries/set-algorithm2e}
@@ -100,17 +112,15 @@
 % NOTE nomi delle funzioni
 \usepackage{../assets/algorithms/functions}
 
-% % NOTE ha una sua cache, attenzione alla precompilazione
-% \usepackage{../libraries/set-minted}
-
 % NOTE utilizzato nel capitolo '16-backtrack'
 \usepackage{chessboard}
 
 % NOTE comandi personalizzati
 \usepackage{../libraries/set-macros}
 
-% NOTE impostazione dei metadati del PDF
+% % NOTE impostazione dei metadati del PDF
 \usepackage{./pdf-props}
+\usepackage{../libraries/set-hyperref}
 
 % NOTE funzione di utilità per accertarmi di aver caricato il preambolo correttamente
 \def\preambleloaded{Precompiled preamble loaded.}
