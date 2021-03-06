@@ -1,11 +1,8 @@
 %&../settings/preamble.main
 
 \ifsubfile
-\pagestyle{plain}
+\usepackage{../settings/subfile}
 \setcounter{chapter}{4}
-\usepackage[
-    parfill=30pt, % default: 30pt
-]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }

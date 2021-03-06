@@ -1,15 +1,12 @@
 %&../settings/preamble.main
 
 \ifsubfile
+\usepackage{../settings/subfile}
+\setcounter{chapter}{3}
+
 \usepackage[newfloat, cachedir=_minted-cache, outputdir=../build]{minted}
 \usepackage{../libraries/set-minted}
 \mintedpath{{../assets/codes/04/}}
-
-\pagestyle{plain}
-\setcounter{chapter}{3}
-\usepackage[
-    parfill=30pt, % default: 30pt
-]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, synctex: no }
@@ -114,7 +111,7 @@ Nei~\cref{lst:java-sequence,lst:cpp-sequence,lst:python-sequence} vengono presen
 
 % % https://tex.stackexchange.com/questions/24454
 % \setlength{\intextsep}{2pt} % Vertical space above & below [h] floats
-\begin{listing}[h]
+\begin{listing}[H]
 \caption{Implementazione delle liste in Java}%
 \label{lst:java-sequence}%
 \begin{minted}{java}
@@ -128,7 +125,7 @@ Result: [ "one", "two", "three" ]
 \end{listing}
 \vspace{-25pt}
 
-\begin{listing}[h]
+\begin{listing}[H]
 \caption{Implementazione delle liste in \texttt{C++}}%
 \label{lst:cpp-sequence}
 \begin{minted}{cpp}
@@ -142,7 +139,7 @@ Result: [1,2,3]
 \end{listing}
 \vspace{-25pt}
 
-\begin{listing}[h]
+\begin{listing}[H]
 \caption{Implementazione delle liste in Python}%
 \label{lst:python-sequence}
 \begin{minted}{python}
@@ -176,7 +173,7 @@ Le operazioni ammesse su un'insieme sono:
 
 Nei~\cref{lst:java-set,lst:cpp-set,lst:python-set} vengono presentati alcuni esempi d'utilizzo dell'implementazione degli insiemi nei linguaggi di programmazione più utilizzati.
 
-\begin{listing}[h]
+\begin{listing}[H]
 \caption{Implementazione degli insiemi in Java}%
 \label{lst:java-set}
 \begin{minted}{java}
@@ -191,7 +188,7 @@ Result: { "Alberto", "Alessio", "Cristian" }
 \end{listing}
 \vspace{-25pt}
 
-\begin{listing}[h]
+\begin{listing}[H]
 \caption{Implementazione degli insiemi in \texttt{C++}}%
 \label{lst:cpp-set}
 \begin{minted}{cpp}
@@ -207,7 +204,7 @@ Result: { "banane", "pere" }
 \end{listing}
 \vspace{-25pt}
 
-\begin{listing}[h]
+\begin{listing}[H]
 \caption{Implementazione degli insiemi in Python}%
 \label{lst:python-set}
 \begin{minted}{python}

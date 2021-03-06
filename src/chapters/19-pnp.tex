@@ -1,14 +1,8 @@
 %&../settings/preamble.main
 
-% NOTE per controllare dove sfori la pagina
-% \setlength\overfullrule{5pt}
-
 \ifsubfile
-\pagestyle{plain}
+\usepackage{../settings/subfile}
 \setcounter{chapter}{18}
-\usepackage[
-    parfill=30pt, % default: 30pt
-]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }

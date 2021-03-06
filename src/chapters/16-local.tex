@@ -1,15 +1,11 @@
 %&../settings/preamble.main
 
 \ifsubfile
+\usepackage{../settings/subfile}
+\setcounter{chapter}{15}
+
 \usepackage[newfloat, cachedir=_minted-cache, outputdir=../build]{minted}
 \usepackage{../libraries/set-minted}
-\mintedpath{{../assets/codes/04/}}
-
-\pagestyle{plain}
-\setcounter{chapter}{15}
-\usepackage[
-    parfill=30pt, % default: 30pt
-]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], shell: yes, synctex: no }

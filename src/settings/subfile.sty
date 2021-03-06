@@ -1,0 +1,14 @@
+\pagestyle{empty}
+\usepackage{etoolbox}
+\patchcmd{\chapter}{plain}{empty}{}{}
+\usepackage[parfill=30pt]{parskip}
+
+% NOTE per controllare dove sfori la pagina
+% \setlength\overfullrule{5pt}
+
+% NOTE sopprimere i warnings localmente
+% \hbadness=10000
+% \hfuzz=\maxdimen\newdimen\hfuzz
+% % \usepackage[saveall]{silence}
+% \usepackage{silence}
+% \WarningsOff[caption]

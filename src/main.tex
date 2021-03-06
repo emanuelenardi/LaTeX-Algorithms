@@ -1,16 +1,16 @@
 %&settings/preamble.main
+\subfilefalse
+
+\usepackage{./settings/pagestyles}
+
+\usepackage[newfloat, cachedir=_minted-cache, outputdir=build]{minted}
+\usepackage{./libraries/set-minted}
+\mintedpath{{assets/codes/04/}}
 
 % \usepackage{imakeidx}
 % \indexsetup{othercode={\parskip=0.0pt plus 1.0pt}}
 % \makeindex[title={Indice analitico}, columns=2]
 % \usepackage{debug}
-
-\usepackage{lipsum}
-
-\subfilefalse
-\usepackage[newfloat, cachedir=_minted-cache, outputdir=build]{minted}
-\usepackage{./libraries/set-minted}
-\mintedpath{{assets/codes/04/}}
 
 % arara: pdflatex: {
 % arara: --> options: ['--output-directory=build'],
@@ -55,35 +55,35 @@
 \input{01-part-one}
 
 	\input{01-introduzione}
-	\input{02-analisi}
-	\input{03-funzioni}
-	\input{04-strutture}
-	\input{05-analisi-ammortizzata}
-	\input{06-alberi}
-	\input{07-abr}
-	\input{08-grafi}
-	\input{09-hashing}
-	\input{10-insiemi-dizionari}
-	\input{11-divide-et-impera}
-	\input{12-strutture-speciali}
-	\cleardoublepage
+% 	\input{02-analisi}
+% 	\input{03-funzioni}
+% 	\input{04-strutture}
+% 	\input{05-analisi-ammortizzata}
+% 	\input{06-alberi}
+% 	\input{07-abr}
+% 	\input{08-grafi}
+% 	\input{09-hashing}
+% 	\input{10-insiemi-dizionari}
+% 	\input{11-divide-et-impera}
+% 	\input{12-strutture-speciali}
+% 	\cleardoublepage
 
-\input{02-part-two}
+% \input{02-part-two}
 
-	\input{13-dp}
-	\input{14-scelta}
-	\input{15-greedy}
-	\input{16-local}
-	\input{17-backtrack}
-	\input{18-prob}
-	\input{19-pnp}
-	\input{20-approx}
-	\cleardoublepage
+% 	\input{13-dp}
+% 	\input{14-scelta}
+% 	\input{15-greedy}
+% 	\input{16-local}
+% 	\input{17-backtrack}
+% 	\input{18-prob}
+% 	\input{19-pnp}
+% 	\input{20-approx}
+% 	\cleardoublepage
 
-\input{03-appendix}
+% \input{03-appendix}
 
-	\input{A1-sorting}
-	\input{A2-tarjan}
+% 	\input{A1-sorting}
+% 	\input{A2-tarjan}
 	% \cleardoublepage
 
 % % NOTE utilizzare lo script 'compile-main' per ottenere l'indice

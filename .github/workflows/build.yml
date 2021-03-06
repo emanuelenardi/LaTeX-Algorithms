@@ -120,7 +120,7 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: " "
+          message: ${{ github.event.head_commit.message }}
           document: ${{ env.ZIP_NAME }}.zip
       
   create_release:

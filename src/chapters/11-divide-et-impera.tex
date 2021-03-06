@@ -1,18 +1,8 @@
 %&../settings/preamble.main
 
 \ifsubfile
-% NOTE sopprimere i warnings localmente
-\hbadness=10000
-\hfuzz=\maxdimen\newdimen\hfuzz
-% \usepackage[saveall]{silence}
-\usepackage{silence}
-\WarningsOff[caption]
-
-\pagestyle{plain}
+\usepackage{../settings/subfile}
 \setcounter{chapter}{10}
-\usepackage[
-    parfill=30pt, % default: 30pt
-]{parskip}
 
 % arara: pdflatex: { options: ["--output-directory=../build"], draft: yes, synctex: no }
 % arara: pdflatex: { options: ["--output-directory=../build"], synctex: no }
