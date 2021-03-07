@@ -90,7 +90,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            @emanuelenardi *build ${{ GITHUB_RUN_NUMBER }} fallita* 😅, [vedi log](https://github.com/emanuelenardi/latex-algorithms/actions)
+            @emanuelenardi *build ${{ env.RUN_NUMBER }} fallita* 😅, [vedi log](https://github.com/emanuelenardi/latex-algorithms/actions)
           format: markdown
           disable_web_page_preview: true
 
