@@ -2,7 +2,6 @@
 *.aux
 *.fdb_latexmk
 *.fls
-*.fmt
 *.idx
 *.loa
 *.loc
@@ -14,7 +13,11 @@
 *.synctex.gz
 *.synctex(busy)
 *.toc
+# cache minted
 **/_minted-cache
 
+# dump preamboli
+*.fmt
+
+# file compilati
 !src/assets/**/*.pdf
-src/tests
