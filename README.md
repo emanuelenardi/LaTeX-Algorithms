@@ -78,8 +78,8 @@ Se trovi errori di qualsiasi natura non avere remore a segnalarli sul [gruppo di
 
 ## Licenza 📃
 
-Gli elaborati presenti in questa repository sono basati sulle trasparenze e gli appunti del Prof.re Alberto Montresor, i quali sono rilasciati sotto licenza [CC BY-NC 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it).
-Gli elaborati presenti su questa repository sono rilasciati sotto la licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it).
+Le trasparenze e gli appunti del Prof.re Alberto Montresor sono rilasciati sotto licenza [CC BY-NC 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it).
+Gli elaborati presenti su questa repository sono rilasciati sotto licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it).
 
 ## Ringraziamenti 🙌🏻🙇🏻
 
