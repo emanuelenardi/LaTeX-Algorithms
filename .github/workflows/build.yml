@@ -5,6 +5,7 @@ on:
       - main                    # Push events on main branch
       - develop                 # Push events on develop branch
     paths-ignore:
+      - '**/README.md'
       - '/*'                    # ignores root files
       - '/*/'                   # ignores root directories
       - '!/.github/build.yml'   # un-ignores this workflow
