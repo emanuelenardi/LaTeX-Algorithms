@@ -72,14 +72,14 @@ Questi sono gli appunti presi in preparazione all'esame di Algoritmi e Strutture
 </td></tr>
 </table>
 
-## Licenza 📃
-
-Gli elaborati presenti in questa repository sono basati sulle trasparenze e gli appunti del Prof.re Alberto Montresor, i quali sono rilasciati sotto licenza [CC BY-NC 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
-
 ## Segnalazione errori 🐞
 
-Se trovi errori di qualsiasi natura non avere remure a segnalarmeli, li correggerò il prima possibile e aggiornerò l'errata corrige, inoltre (se ti fa piacere) verrai menzionato vicino all'errore segnalato.
-Una versione pubblica e aggiornata dell'errata corrige sarà presente alla pagina "[Errata corrige](https://github.com/emanuelenardi/latex-algorithms/wiki/Errata-corrige)" nella Wiki del progetto.
+Se trovi errori di qualsiasi natura non avere remore a segnalarli sul [gruppo di discussione Telegram](https://t.me/DiscussioneDispensaAlgoritmi), li correggerò il prima possibile e aggiornerò l'[errata corrige](https://github.com/emanuelenardi/latex-algorithms/wiki/Errata-corrige).
+
+## Licenza 📃
+
+Gli elaborati presenti in questa repository sono basati sulle trasparenze e gli appunti del Prof.re Alberto Montresor, i quali sono rilasciati sotto licenza [CC BY-NC 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it).
+Gli elaborati presenti su questa repository sono rilasciati sotto la licenza [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.it).
 
 ## Ringraziamenti 🙌🏻🙇🏻
 
@@ -87,8 +87,8 @@ Vorrei ringraziare [Francesco Bozzo](https://github.com/FrancescoBozzo),  [Samue
 Le carenze di questa dispensa sarebbero considerevolmente maggiori e più numerose se non fosse stato per la loro assistenza.
 Gli errori rimanenti sono, ovviamente, interamente miei.
 
-Questo progetto segue la specifica [all-contributors](https://github.com/all-contributors/all-contributors)
-Se vuoi contribuire consulta la [documentazione](docs/CONTRIBUTING.md)
+Questo progetto segue la specifica [all-contributors](https://github.com/all-contributors/all-contributors).
+Se vuoi contribuire consulta la [documentazione](docs/CONTRIBUTING.md).
 
 Grazie a queste persone meravigliose ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
