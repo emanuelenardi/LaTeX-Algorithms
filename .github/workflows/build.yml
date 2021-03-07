@@ -46,6 +46,7 @@ jobs:
           echo "ROOT_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
           echo "BUILD_DIR=$GITHUB_WORKSPACE/src/build" >> $GITHUB_ENV
           echo "SCRIPT_DIR=$GITHUB_WORKSPACE/src/scripts/unix" >> $GITHUB_ENV
+          echo "RUN_NUMBER=$GITHUB_RUN_NUMBER" >> $GITHUB_ENV
       
       # Compile LaTeX document
       - name: Step 3 - Compile ⚙️ LaTeX document
@@ -82,14 +83,14 @@ jobs:
           mkdir $ZIP_NAME
           cp -r -t $ZIP_NAME chapters main.pdf
 
-      - name: ⚠️ notifica cancellazione build ⚠️
+      - name: ⚠️ notifica fallimento build ⚠️
         if: ${{ cancelled() }}
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            @emanuelenardi *build #$GITHUB_RUN_NUMBER cancellata*, [vedi log](https://github.com/emanuelenardi/latex-algorithms/actions)
+            @emanuelenardi *build ${{ env.RUN_NUMBER }} fallita* 😅, [vedi log](https://github.com/emanuelenardi/latex-algorithms/actions)
           format: markdown
           disable_web_page_preview: true
 
