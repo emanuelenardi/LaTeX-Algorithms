@@ -84,7 +84,7 @@ jobs:
           cp -r -t $ZIP_NAME chapters main.pdf
 
       - name: ⚠️ notifica fallimento build ⚠️
-        if: ${{ failed() }}
+        if: ${{ failure() }}
         uses: appleboy/telegram-action@master
         with:
           to: ${{ secrets.TELEGRAM_TO }}
