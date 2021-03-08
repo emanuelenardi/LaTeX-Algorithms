@@ -7,10 +7,10 @@ on:
     paths-ignore:
       - '*'                    # ignores root files
       - '*/'                   # ignores root directories
-      - '!/.github/build.yml'   # un-ignores this workflow
-      - '!/src/'                # un-ignores the root 'src' directory
-      - '/src/build/'           # ignores 'build' dir inside "src" dir
-      - '/src/scripts/windows/' # ignores "windows scripts" dir
+      - '!.github/build.yml'   # un-ignores this workflow
+      - '!src/'                # un-ignores the root 'src' directory
+      - 'src/build/'           # ignores 'build' dir inside "src" dir
+      - 'src/scripts/windows/' # ignores "windows scripts" dir
   pull_request:
     types: [opened, reopened, synchronize]
 jobs:
@@ -146,7 +146,7 @@ jobs:
           echo "TAG_NAME=${{ needs.build_docs.outputs.tag_name }}" >> $GITHUB_ENV
 
       - name: Step 0 - Check if there a new tag
-        if: ${{ needs.build_docs.outputs.part == ('major' || 'minor' || 'patch') }}
+        if: ${{ needs.build_docs.outputs.part == ('major' || 'minor' || 'pre-major' || 'pre-minor') }}
         id: flag
         run: |
           echo "::set-output name=post_code::0"
