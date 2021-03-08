@@ -3,7 +3,7 @@ on:
   push:
     branches:       
       - main                    # Push events on main branch
-      - develop                 # Push events on develop branch
+      - preview                 # Push events on develop branch
     paths-ignore:
       - '*'                    # ignores root files
       - '*/'                   # ignores root directories
