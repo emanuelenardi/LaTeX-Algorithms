@@ -1,6 +1,3 @@
-% NOTE per controllare dove sfori la pagina
-\setlength\overfullrule{5pt}
-
 % https://tex.stackexchange.com/questions/50830/
 % \hfuzz=60pt% algoirthmi con 'H' option
 % \hbadness=10000
@@ -10,14 +7,16 @@
 \usepackage{showframe}
 \renewcommand*\ShowFrameColor{\color{red}}
 
+% NOTE per controllare dove sfori la pagina
+\setlength\overfullrule{5pt}
+
 % NOTE mostra le etichette
-% \usepackage[inner]{showlabels}
-% \renewcommand\showlabelfont{\small\color{ForestGreen}}
+\usepackage[inner]{showlabels}
+\renewcommand\showlabelfont{\small\color{ForestGreen}}
 
-% NOTE controlla che le voci bibliografiche siano state usate
-% WARNING non ancora testato
-% \usepackage{refcheck}
-
+% NOTE controlla che le etichette siano state usate
+\usepackage{refcheck}
 % NOTE "It shows a warning whenever a float is placed more than tolerance pages from its original page"
+\usepackage[tolerance=1]{chkfloat}
+
 % \usepackage{layouts}
-% \usepackage{chkfloat}

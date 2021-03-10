@@ -1,4 +1,4 @@
-arara tree-rb-examples 
-arara tree-rb-leftRotation 
-arara tree-rb-question 
-arara tree-rb-rightRotation 
+arara binary-tree 
+arara tree-listChildren 
+arara tree-vectorChildren 
+arara tree-vectorParents 

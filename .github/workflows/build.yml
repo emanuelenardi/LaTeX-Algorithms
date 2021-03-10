@@ -37,10 +37,8 @@ jobs:
         run: pip install Pygments
       
       # Checkout branch and set environment variables
-      - name: Step 2 - (1/2) Checkout 👀 the main branch
-        uses: actions/checkout@v2
-        with:
-          ref: main
+      - name: Step 2 - (1/2) Checkout 👀 the HEAD
+        uses: actions/checkout@v2 
       - name: Step 2 - (2/2) Setting 🔧 environment variables
         run: |
           echo "ROOT_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
@@ -63,7 +61,7 @@ jobs:
           WITH_V: true
           RELEASE_BRANCHES: main, develop
           DEFAULT_BUMP: patch # default: minor
-          DRY_RUN: true # for debugging purposes
+          # DRY_RUN: true # for debugging purposes
           PRERELEASE_SUFFIX: preview
 
       # Prepare variables used to name the files
@@ -146,7 +144,7 @@ jobs:
           echo "TAG_NAME=${{ needs.build_docs.outputs.tag_name }}" >> $GITHUB_ENV
 
       - name: Step 0 - Check if there a new tag
-        if: ${{ needs.build_docs.outputs.part == ('major' || 'minor' || 'patch') }}
+        if: ${{ needs.build_docs.outputs.part == ('major' || 'minor' || 'pre-major' || 'pre-minor') }}
         id: flag
         run: |
           echo "::set-output name=post_code::0"

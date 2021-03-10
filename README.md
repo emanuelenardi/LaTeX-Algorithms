@@ -15,7 +15,6 @@
 [![GitHub release](https://img.shields.io/github/release/emanuelenardi/latex-algorithms.svg)](https://github.com/emanuelenardi/latex-algorithms/releases/)
 [![GitHub tag](https://img.shields.io/github/tag/emanuelenardi/latex-algorithms.svg)](https://github.com/emanuelenardi/latex-algorithms/tags/)
 [![Github all releases](https://img.shields.io/github/downloads/emanuelenardi/latex-algorithms/total.svg)](https://github.com/emanuelenardi/latex-algorithms/releases/)
-[![HitCount](http://hits.dwyl.com/emanuelenardi/latex-algorithms.svg)](http://hits.dwyl.com/emanuelenardi/latex-algorithms)
 
 ![logo](src/assets/figures/logo/logo-unitn.png)
 
@@ -71,6 +70,14 @@ Questi sono gli appunti presi in preparazione all'esame di Algoritmi e Strutture
 
 </td></tr>
 </table>
+
+## Anteprima
+
+<p align="center">
+    <a href="https://issuu.com/nardiemanuele">
+	<img alt="preview-issuu" src="https://github.com/emanuelenardi/latex-algorithms/blob/preview/src/assets/figures/cover/preview-issuu.jpg" width="480">
+    </a>
+</p>
 
 ## Segnalazione errori 🐞
 
