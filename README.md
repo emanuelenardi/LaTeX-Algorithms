@@ -73,9 +73,11 @@ Questi sono gli appunti presi in preparazione all'esame di Algoritmi e Strutture
 
 ## Anteprima
 
-<a href="https://issuu.com/nardiemanuele">
-    <img alt=preview-issuu src="https://github.com/src/assets/figures/cover/preview-issuu.jpg" width="48">
-</a>
+<p align="center">
+    <a href="https://issuu.com/nardiemanuele">
+	<img alt="preview-issuu" src="https://github.com/emanuelenardi/latex-algorithms/blob/preview/src/assets/figures/cover/preview-issuu.jpg" width="480">
+    </a>
+</p>
 
 ## Segnalazione errori 🐞
 
