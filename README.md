@@ -71,6 +71,11 @@ Questi sono gli appunti presi in preparazione all'esame di Algoritmi e Strutture
 </td></tr>
 </table>
 
+## Anteprima
+
+<a href="https://issuu.com/nardiemanuele/docs/algoritmi">
+    <img alt=preview-issuu src="https://github.com/src/assets/figures/cover/preview-issuu.jpg" width="48">
+</a>
 ## Segnalazione errori 🐞
 
 Se trovi errori di qualsiasi natura non avere remore a segnalarli sul [gruppo di discussione Telegram](https://t.me/DiscussioneDispensaAlgoritmi), li correggerò il prima possibile e aggiornerò l'[errata corrige](https://github.com/emanuelenardi/latex-algorithms/wiki/Errata-corrige).
