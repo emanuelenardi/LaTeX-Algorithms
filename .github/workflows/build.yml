@@ -37,8 +37,8 @@ jobs:
         run: pip install Pygments
       
       # Checkout branch and set environment variables
-      - name: Step 2 - (1/2) Checkout 👀 the main branch
-        uses: actions/checkout@v2
+      - name: Step 2 - (1/2) Checkout 👀 the HEAD
+        uses: actions/checkout@v2 
       - name: Step 2 - (2/2) Setting 🔧 environment variables
         run: |
           echo "ROOT_DIR=$GITHUB_WORKSPACE" >> $GITHUB_ENV
