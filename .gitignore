@@ -21,3 +21,6 @@
 
 # file compilati
 !src/assets/**/*.pdf
+
+# workspace VScode
+**/*.code-workspace
