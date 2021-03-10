@@ -12,5 +12,6 @@ echo: & echo ==================== COMPILO PREAMBOLO ALGORITMI ==================
 cd "%ALGORITHMS_DIR%"
 pdflatex -ini -jobname="preamble" "&pdflatex preamble.sty\dump"
 del /s preamble.log >nul 2>&1
+cls
 
 cd %INITIAL_WORKING_DIRECTORY%

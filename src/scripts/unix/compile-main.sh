@@ -9,6 +9,6 @@ arara main
 
 cd $BUILD_DIR
 find . -type f ! -name '*.pdf' ! -name '.gitignore' | xargs -r rm
-rm -r _minted-*
+# rm -r _minted-*
 
 cd $INITIAL_WORKING_DIRECTORY
