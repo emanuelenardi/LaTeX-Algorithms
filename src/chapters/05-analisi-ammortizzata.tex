@@ -397,7 +397,7 @@ Ogni volta che con un inserimento vado ad eccedere la dimensione del vettore ini
 
 Il costo effettivo di \(n\) operazioni di raddoppiamento sono:
 \[\begin{WithArrows}[displaystyle]
-T(n) &= \sum_{i=1}^{n} c_i \Arrow{sostituisco c_i con l'equazione di costo}\\
+T(n) &= \sum_{i=1}^{n} c_i \Arrow{sostituisco \(c_i\) con l'equazione di costo}\\
      &= n + \sum_{j=0}^{\floor{\log n}} 2^j \Arrow{svolgo la sommatoria}\\
      &= n + 2^{\floor{\log n} + 1} - 1 \Arrow{sarà certamente minore di}\\
      &\leqslant n + 2^{\log n + 1} - 1 \Arrow{consentendoci quindi di concludere che}\\
@@ -433,7 +433,7 @@ La differenza tra le due operazioni quindi non sta tanto nel costo della chiamat
 
 Il costo effettivo di \(n\) operazioni di incremento sono: 
 \[\begin{WithArrows}[displaystyle]
-T(n) &= \sum_{i=1}^{n} c_i \Arrow{sostituisco c_i con l'equazione di costo}\\
+T(n) &= \sum_{i=1}^{n} c_i \Arrow{sostituisco \(c_i\)  con l'equazione di costo}\\
      &= n + \sum_{j=1}^{\floor{n/d}} d \cdot j \Arrow{estraggo la d dalla sommatoria}\\
      &= n + d \sum_{j=1}^{\floor{n/d}} d \cdot j \Arrow{svolgo la sommatoria}\\
      &= n + d \frac{(\floor{n/d} + 1) \floor{n/d}}{2} \Arrow{intrinsecamente minore di}\\
