@@ -1,6 +1,6 @@
 # Contributing to this repository
 
-## Requisiti per la compilazione
+## Requisiti per la compilazione 📌
 
 Per poter compilare questo progetto è necessario avere sulla propria macchina:
 
@@ -10,7 +10,7 @@ Per poter compilare questo progetto è necessario avere sulla propria macchina:
 - la libreria Python [`pygmetize`](https://pygments.org/) (per la colorazione del codice all'interno del documento);
 - java (per la compilazione dei documenti tramite [arara](https://github.com/islandoftex/arara)).
 
-### Installazione dei requisiti su Windows
+### Installazione dei requisiti su Windows 
 
 Per l'installazione su windows eseguire i passi nei seguenti link:
 
@@ -32,7 +32,7 @@ tlmgr init-usertree # initialize tlmgr
 tlmgr update --self --all
 ```
 
-### Controllo installazione
+### Controllo installazione 👀
 
 Per accertarti di avere tutti gli strumenti adatti per compilare questo progetto (sia su linux che su windows) esegui le seguenti righe su un terminale:
 ```bash
@@ -43,7 +43,7 @@ tlmgr --version
 arara --version
 ```
 
-## Come compilare il progetto
+## Come compilare il progetto ⚙️
 
 Scarica una copia del progetto
 ```bash
