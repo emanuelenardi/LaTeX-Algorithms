@@ -46,6 +46,7 @@ arara --version
 ## Come compilare il progetto ⚙️
 
 Scarica una copia del progetto
+
 ```bash
 git clone https://github.com/emanuelenardi/latex-algorithms.git
 ```
@@ -58,6 +59,7 @@ Per compilare il progetto, una volta soddisfatti i requisiti, **eseguire dalla c
 ./src/scripts/unix/compile-project.sh     # linux/mac
 ./src/scripts/windows/compile-project.bat # windows
 ```
+
 alla fine dell'esecuzione ispezionando la cartella `build` troverai una cartella `chapters` con tutti i singoli capitoli compilati e il file `main.pdf` completo di tutti i capitoli.
 
 Lo script è composto a sua volta da altri script, contenuti nella stessa cartella, quali:
@@ -76,7 +78,8 @@ Ogni script può essere eseguito anche singolarmente.
 Nel caso si eseguissero modifiche al file `settings/preamble.main.sty` è necessario compilarlo nuovamente per vedere il risultato delle proprie modifiche riflesse sul documento finale.
 
 ```bash
-unix/scripts/compile-preambles # pre-compilo i preamboli
+./src/scripts/unix/compile-preambles.sh     # linux/mac
+./src/scripts/windows/compile-preambles.bat # windows
 ```
 
 ## Cosa succede quando si pubblica il codice su Github
