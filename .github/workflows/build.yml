@@ -59,10 +59,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           WITH_V: true
-          RELEASE_BRANCHES: main, develop
+          RELEASE_BRANCHES: main
           DEFAULT_BUMP: patch # default: minor
           # DRY_RUN: true # for debugging purposes
-          PRERELEASE_SUFFIX: preview
+          # PRERELEASE_SUFFIX: beta
 
       # Prepare variables used to name the files
       - name: Step 5 - (1/2) Setting 🔧 environment variables
