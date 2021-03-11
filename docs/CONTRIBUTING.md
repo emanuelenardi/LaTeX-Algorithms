@@ -94,7 +94,7 @@ La regola build è suddivisa in tre _job_ i quali svolgono compiti specifici.
     5. viene creato un nuovo _lightweight tag_ (un tag non annotato) (Step 4);
     6. viene creato il nome dello zip sulla base del nuovo tag e della data e ora corrente     (Step 5);
     7. viene creata una cartella contenente la cartella dei singoli capitoli e del main     completo (Step 6);
-    8. viene inviata una notifica al gruppo telegram "[Discussione Dispensa Algoritmi](https://    t.me/DiscussioneDispensaAlgoritmi)" nel caso una delle fasi precedenti fallisca (molto     probabilmente è fallita la compilazione del documento principale);
+    8. viene inviata una notifica al gruppo telegram "[Discussione Dispensa Algoritmi](https://t.me/DiscussioneDispensaAlgoritmi)" nel caso una delle fasi precedenti fallisca (molto     probabilmente è fallita la compilazione del documento principale);
     9. se tutte le operazioni precedenti vanno a buon fine allora viene creato un artefatto che viene caricato su Github e che ci permetterà di comunicare con gli altri _job_; è possibile scaricarlo dalla tab _Actions_ (Step 7).
 
 I _job_ `send_docs` e `create_release` dipendono dal _job_ `build_docs`, quindi aspetteranno che questo venga completato con successo, dopodiché verranno eseguiti in parallelo.
