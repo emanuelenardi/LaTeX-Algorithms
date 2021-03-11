@@ -62,7 +62,7 @@ jobs:
           RELEASE_BRANCHES: main
           DEFAULT_BUMP: patch # default: minor
           # DRY_RUN: true # for debugging purposes
-          # PRERELEASE_SUFFIX: beta
+          PRERELEASE_SUFFIX: preview
 
       # Prepare variables used to name the files
       - name: Step 5 - (1/2) Setting 🔧 environment variables
