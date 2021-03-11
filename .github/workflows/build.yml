@@ -61,7 +61,7 @@ jobs:
           WITH_V: true
           RELEASE_BRANCHES: main, develop
           DEFAULT_BUMP: patch # default: minor
-          DRY_RUN: true # for debugging purposes
+          # DRY_RUN: true # for debugging purposes
           PRERELEASE_SUFFIX: preview
 
       # Prepare variables used to name the files
