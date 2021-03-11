@@ -82,6 +82,14 @@ Nel caso si eseguissero modifiche al file `settings/preamble.main.sty` è necess
 ./src/scripts/windows/compile-preambles.bat # windows
 ```
 
+## Come effettuare un commit
+
+Quando si effettua un commit è possibile specificare quale parte del tag verrà aggiornata (e di conseguenza se verrà creata una release o meno).
+
+Ad esempio specificando `#minor` nel messaggio del commit nel seguente modo: `git commit -m "#minor <message>"` allora la parte di tag che verrà aggiornata sarà quella di una versione minore, passando ad esempio dalla versione `v0.0.1`, alla versione `v0.1.1`.
+
+I tag disponibili sono `#major`, `#minor` e `#patch` (predefinito se non specificato altrimenti).
+
 ## Cosa succede quando si pubblica il codice su Github
 
 Quando il codice viene pubblicato tramite un `push` sui branch `main` e `preview` viene eseguita la github action [`build`](https://github.com/emanuelenardi/latex-algorithms/blob/main/.github/workflows/build.yml).
