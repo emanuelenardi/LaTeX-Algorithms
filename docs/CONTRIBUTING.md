@@ -1,4 +1,4 @@
-# Contributing to this repository
+# Contribuire a questo progetto
 
 ## Requisiti per la compilazione 📌
 
