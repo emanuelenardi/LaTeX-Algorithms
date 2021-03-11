@@ -83,6 +83,10 @@ Questi sono gli appunti presi in preparazione all'esame di Algoritmi e Strutture
 
 Se trovi errori di qualsiasi natura non avere remore a segnalarli sul [gruppo di discussione Telegram](https://t.me/DiscussioneDispensaAlgoritmi), li correggerò il prima possibile e aggiornerò l'[errata corrige](https://github.com/emanuelenardi/latex-algorithms/wiki/Errata-corrige).
 
+## Contribuire
+
+Per contribuire a questo progetto segui le [linee guida](docs/CONTRIBUTING.md).
+
 ## Licenza 📃
 
 Le trasparenze e gli appunti del Prof.re Alberto Montresor sono rilasciati sotto licenza [CC BY-NC 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it).
