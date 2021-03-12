@@ -1,7 +1,0 @@
-**/.env
-**/.git
-**/.gitignore
-**/.vscode
-**/*.code-workspace
-**/Dockerfile*
-README.md
