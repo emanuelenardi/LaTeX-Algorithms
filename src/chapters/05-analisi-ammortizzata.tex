@@ -68,11 +68,8 @@ L'\cref{alg:contatore-binario} illustra i passaggi\dots
     }
 \end{algorithm}
 
-Nella~\cref{tab:contatore-bit} notiamo che i bit modificati\dots
-
 \begin{table}[!ht]\centering
-    \caption{Esempio di contatore binario}%
-    \label{tab:contatore-bit}
+    \caption{Esempio di contatore binario}\label{tab:contatore-bit}
     \begin{tabular}{@{} *{9}{ F{C} } @{}}
         \toprule
             x & A[7] & A[6] & A[5] & A[4] & A[3] & A[2] & A[1] & A[0]\\
@@ -135,7 +132,7 @@ Eseguito in Java.
 
 \begin{figure}[!ht]\centering
     \includegraphics[width=.65\textwidth]{ops-ammortizzate}
-    \caption{Il grafico mostra l'andamento del costo di un'operazione con \(n = 2^k\) operazioni}\label{fig:ops-ammortizzate}
+    \caption{Andamento del costo di un'operazione con \(n = 2^k\) operazioni}\label{fig:ops-ammortizzate}
 \end{figure}
 
 \subsubsection{Metodo dell'aggregazione nel contatore binario}
@@ -146,8 +143,7 @@ Quanti bit vengono modificati?
 \newcommand{\diff}[1]{\textcolor{red}{\textbf{#1}}}
 
 \begin{table}[!ht]\centering
-    \caption{Numero di bit modificati}%
-    \label{tab:contatore-bit-modificati}
+    \caption{Numero di bit modificati}\label{tab:contatore-bit-modificati}
     \begin{tabular}{@{} *{9}{ F{C} } C @{}}
         \toprule
             x & A[7] & A[6] & A[5] & A[4] & A[3] & A[2] & A[1] & A[0] & \texttt{\#}\text{bit}\\
@@ -434,7 +430,7 @@ La differenza tra le due operazioni quindi non sta tanto nel costo della chiamat
 Il costo effettivo di \(n\) operazioni di incremento sono: 
 \[\begin{WithArrows}[displaystyle]
 T(n) &= \sum_{i=1}^{n} c_i \Arrow{sostituisco \(c_i\)  con l'equazione di costo}\\
-     &= n + \sum_{j=1}^{\floor{n/d}} d \cdot j \Arrow{estraggo la d dalla sommatoria}\\
+     &= n + \sum_{j=1}^{\floor{n/d}} d \cdot j \Arrow{estraggo la \(d\) dalla sommatoria}\\
      &= n + d \sum_{j=1}^{\floor{n/d}} d \cdot j \Arrow{svolgo la sommatoria}\\
      &= n + d \frac{(\floor{n/d} + 1) \floor{n/d}}{2} \Arrow{intrinsecamente minore di}\\
      &\leqslant n + \frac{(n/d + 1) n}{2} = \Omicron(n^2)
@@ -582,7 +578,7 @@ Nella~\cref{fig:dynvector} possiamo notare quanto appena spiegato.
 
 \begin{figure}[!ht]\centering
     \includegraphics[width=.65\textwidth]{dynvector}
-    \caption{Il grafico illustra la variazione del potenziale e della capacità al variare della dimensione}\label{fig:dynvector}
+    \caption{Variazione del potenziale e della capacità del vettore al variare della dimensione}\label{fig:dynvector}
 \end{figure}
 
 Se \(\alpha=\frac{1}{2}\) il costo ammortizzato di un inserimento \emph{senza espansione} è:
