@@ -27,51 +27,53 @@ Questi sono gli appunti presi in preparazione all'esame di Algoritmi e Strutture
 <tr><td align="center">
 
 | no. | Titolo                          | pagine |
-| --- | ------------------------------- | --- |
-| 1   | Introduzione                    | 7  |
-| 2   | Analisi di algoritmi            | 21 |
-| 2   | Analisi delle funzioni di costo | 20 |
-| 3   | Analisi ammortizzata            | -  |
-| 4   | Strutture Dati                  | 11 |
-| 5   | Alberi                          | 9  |
-| 6   | Alberi Binari di Ricerca        | 20 |
-| 7   | Hashing                         | -  |
-| 8   | Insiemi e dizionari             | 4  |
-| 9   | Grafi                           | 32 |
-| 10  | Strutture dati speciali         | -  |
-| 11  | "Scelta"                        | 10 |
-| 12  | Divide et Impera                | 7  |
+| --- | ------------------------------- | ------ |
+| 1   | Introduzione                    | 7      |
+| 2   | Analisi di algoritmi            | 21     |
+| 2   | Analisi delle funzioni di costo | 20     |
+| 3   | Analisi ammortizzata            | -      |
+| 4   | Strutture Dati                  | 11     |
+| 5   | Alberi                          | 9      |
+| 6   | Alberi Binari di Ricerca        | 20     |
+| 7   | Hashing                         | -      |
+| 8   | Insiemi e dizionari             | 4      |
+| 9   | Grafi                           | 32     |
+| 10  | Strutture dati speciali         | -      |
+| 11  | "Scelta"                        | 10     |
+| 12  | Divide et Impera                | 7      |
 
 </td><td valign="top" align="center">
 
-| no. | titolo                                | pagine |
-| --- | ------------------------------------- | --- |
-| 13  | Programmazione Dinamica               | -  |
-| 14  | Algoritmi ingordi                     | 14 |
-| 15  | Ricerca locale                        | -  |
-| 16  | Backtrack                             | 10 |
-| 17  | Algoritmi probabilistici              | -  |
-| 18  | Problemi intrattabili                 | 10 |
-| 19  | Soluzioni per problemi intrattabili   | 20 |
+| no. | titolo                              | pagine |
+| --- | ----------------------------------- | ------ |
+| 13  | Programmazione Dinamica             | -      |
+| 14  | Algoritmi ingordi                   | 14     |
+| 15  | Ricerca locale                      | -      |
+| 16  | Backtrack                           | 10     |
+| 17  | Algoritmi probabilistici            | -      |
+| 18  | Problemi intrattabili               | 10     |
+| 19  | Soluzioni per problemi intrattabili | 20     |
 
 </td></tr>
 <tr><th colspan="2">Appendici</th></tr>
 <tr><td align="center">
 	
-| no. | titolo                          | pagine |
-| --- | ------------------------------- | --- |
-| A1  | Problema dell'ordinamento       |  5  |
+| no. | titolo                    | pagine |
+| --- | ------------------------- | ------ |
+| A1  | Problema dell'ordinamento | 5      |
 
 </td><td align="center">
 	
-| no. | titolo                          | pagine |
-| --- | ------------------------------- | --- |
-| A2  | Algoritmo di Tarjan             |  -  |
+| no. | titolo              | pagine |
+| --- | ------------------- | ------ |
+| A2  | Algoritmo di Tarjan | -      |
 
 </td></tr>
 </table>
 
 ## Anteprima 👀
+
+Premi sull'immagine per vedere il PDF online 👇🏻
 
 <p align="center">
     <a href="https://issuu.com/nardiemanuele">
