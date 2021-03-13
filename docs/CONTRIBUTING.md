@@ -145,6 +145,9 @@ I _job_ `send_docs` e `create_release` dipendono dal _job_ `build_docs`, quindi 
 
 ## 1.5. Estensioni VSCode consigliate 📦
 
+All'interno del file `.vscode\extensions.json` sono presenti alcuni suggerimenti di estensioni da installare.
+Di seguito sono elencate le motivazioni di quei suggerimenti, in modo tale che possiate scegliere autonomamente se installarle o meno.
+
 - [LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop) per editare i file LaTeX
 - [Markdown All in One](https://marketplace.visualstudio.com/items?itemName=yzhang.markdown-all-in-one) per editare i file markdown
 - [markdownlint](https://marketplace.visualstudio.com/items?itemName=DavidAnson.vscode-markdownlint) per scrivere file markdown corretti
