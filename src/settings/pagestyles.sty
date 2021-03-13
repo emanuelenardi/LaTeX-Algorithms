@@ -30,21 +30,15 @@
 
 % NOTE toglie testatine e piè pagina dalle pagine bianche
 \usepackage{emptypage}
-% \usepackage{afterpage}
-% \newcommand{\blankpage}{%
-%     \null
-%     \thispagestyle{empty}%
-%     \addtocounter{page}{-1}%
-%     \newpage%
-% }
 
 % https://tex.stackexchange.com/questions/227/
 \usepackage{pageslts}
+\usepackage[abspage,lastpage,perpage, user]{zref}
 \fancypagestyle{debug}{
 	\fancyhead[LE]{\textbf{\textsf{\thepage}}\qquad\leftmark}
 	\fancyhead[RO]{\rightmark\qquad\textbf{\textsf{\thepage}}}
 	\renewcommand{\headrulewidth}{0.4pt}%
 	\renewcommand{\footrulewidth}{0.4pt}%
-	\fancyfoot[C]{Pagina \textbf{\textsf{\thepage}}\ (\theCurrentPage) of \lastpageref{LastPages}}
+	\fancyfoot[C]{Pagina \textbf{\textsf{\thepage}}\ (\theCurrentPage\ di \zref[abspage]{LastPage})}
 }
-\pagestyle{debug}
+% \pagestyle{debug}
