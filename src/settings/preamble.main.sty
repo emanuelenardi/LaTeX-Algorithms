@@ -33,13 +33,10 @@
 \renewcommand{\appendixname}{Appendice}
 \renewcommand{\appendixpagename}{Appendici}
 \renewcommand{\appendixpage}{%
-	\thispagestyle{empty}%
-	\null\vfill%
-	\begin{flushright}%
-	\fontsize{40}{40}\selectfont\scshape\appendixpagename%
-	\end{flushright}%
-	\vfill\null%
-	\thispagestyle{epigraph}
+	\thispagestyle{epigraph}%
+	{\null\vfill%
+	\filleft\fontsize{40}{40}\selectfont\scshape\appendixpagename%
+	\vfill\null}%
 	\clearpage}
 
 % WARNING da caricare presto
