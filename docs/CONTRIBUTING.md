@@ -204,7 +204,7 @@ Installa l'estensione "[Remote - Containers](https://marketplace.visualstudio.co
 Riavvia VScode come suggerito dall'estensione.
 
 Una volta riavviato VScode ti verrà chiesto se vorrai aprire la cartella all'interno del container.
-L'avvio del container richiederà del tempo.
+Il primo avvio del container richiederà del tempo.
 Una volta fatto vedrai nell'angolo in basso a sinistra che stai sviluppando il progetto all'interno che del container "`latex-env`".
 
 <p align="center">
