@@ -1,7 +1,6 @@
 FROM texlive/texlive:latest
 
-# adding metadata
-LABEL version="1.0" maintainer"Emanuele Nardi <emanuele.nardi@studenti.unitn.it>"
+LABEL version="1.0" maintainer="Emanuele Nardi <emanuele.nardi@studenti.unitn.it>"
 
 ARG UNAME=user
 ARG UID=1000
@@ -13,9 +12,9 @@ RUN useradd -m -u $UID -g $GID -o -s /bin/bash $UNAME
 
 # installo le dipendenze
 RUN apt-get update
-RUN apt-get install python3-pip -y
-RUN pip install Pygments
+RUN apt-get install python3-pygments
 RUN apt-get autoclean -y && apt-get autoremove -y
 
+# utilizzo l'utente
 USER $UNAME
 
