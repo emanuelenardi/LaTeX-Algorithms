@@ -1,7 +1,7 @@
 @echo off
 
-@REM %~dp0
-set ROOT_DIR=%cd%
+@REM https://stackoverflow.com/questions/3827567/
+for %%I in ("%~dp0..\..\..") do set ROOT_DIR=%%~fI
 set SRC_DIR=%ROOT_DIR%\src
 set SCRIPT_DIR=%SRC_DIR%\windows
 set CHAPTERS_DIR=%SRC_DIR%\chapters
