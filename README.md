@@ -89,6 +89,8 @@ Se trovi errori di qualsiasi natura non avere remore a segnalarli sul [gruppo di
 
 Per contribuire a questo progetto segui le [linee guida](docs/CONTRIBUTING.md).
 
+Se hai trovato utili questi appunti metti la ⭐!
+
 ## Licenza 📃
 
 Le trasparenze e gli appunti del Prof.re Alberto Montresor sono rilasciati sotto licenza [CC BY-NC 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.it).
