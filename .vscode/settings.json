@@ -1,5 +1,5 @@
 {
-    "latex-workshop.synctex.afterBuild.enabled": true,
+    "files.autoSave": "onFocusChange",
     "latex-workshop.latex.recipes": [
         {
             "name": "arara 🦜",
@@ -55,5 +55,85 @@
             ],
             "env": {}
         }
-    ]
+    ],
+    "latex-workshop.synctex.afterBuild.enabled": true,
+    "todo-tree.highlights.customHighlight": {
+        "ATTENTION": {
+            "icon": "info",
+            "iconColour": "yellow",
+            "type": "text",
+            "background": "yellow",
+            "rulerLane": "disable",
+            "hideFromStatusBar": "true",
+            "hideFromTree": "true",
+        },
+        "BUG": {
+            "icon": "squirrel",
+            "iconColour": "MediumSlateBlue",
+            "background": "cyan",
+            "type": "text",
+            "rulerLane": "disable"
+        },
+        "FIXME": {
+            "icon": "flame",
+            "iconColour": "Crimson",
+            "background": "red",
+            "type": "text",
+            "rulerLane": "disable",
+        },
+        "IDEA": {
+            "icon": "pin",
+            "iconColour": "DodgerBlue",
+            "background": "Teal",
+            "rulerLane": "disable",
+            "hideFromStatusBar": "true",
+            "hideFromTree": "true",
+        },
+        "NOTE": {
+            "icon": "pin",
+            "iconColour": "DodgerBlue",
+            "background": "#6495ED",
+            "type": "text",
+            "rulerLane": "disable",
+        },
+        "OPTIMIZE": {
+            "icon": "arrow-up",
+            "iconColour": "MediumAquamarine",
+            // "background": "silver",
+            "rulerLane": "disable",
+            "hideFromStatusBar": "true",
+        },
+        "SEE": {
+            "icon": "eye",
+            "iconColour": "Teal",
+            // "background": "silver",
+            "rulerLane": "disable",
+            "hideFromStatusBar": "true",
+            "hideFromTree": "true",
+        },
+        "TODO": {
+            "icon": "check-circle",
+            "iconColour": "Aquamarine",
+            "type": "text",
+            "background": "#9FE2BF",
+            "rulerLane": "disable",
+        },
+        "WARNING": {
+            "icon": "stop",
+            "iconColour": "Coral",
+            "type": "text",
+            "background": "orange",
+            "rulerLane": "disable",
+        },
+    },
+    "todo-tree.regex.regex": "((//|#|%|<!--|;|/\\*|^)\\s*($TAGS)|^\\s*- \\[ \\])",
+    "todo-tree.general.statusBar": "current file",
+    "todo-tree.tree.showCountsInTree": true,
+    "todo-tree.tree.buttons.groupBySubTag": true,
+    "todo-tree.tree.tagsOnly": true,
+    "todo-tree.tree.groupedByTag": true,
+    "todo-tree.tree.labelFormat": "${filename} - ${after}",
+    "todo-tree.tree.tooltipFormat": "${filename}, ${tag} a linea ${line}",
+    "workbench.list.smoothScrolling": true,
+    "workbench.tree.indent": 20,
 }

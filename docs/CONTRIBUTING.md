@@ -47,7 +47,7 @@ Su linux è sufficiente eseguire le seguenti righe
 sudo apt -y update && sudo apt -y upgrade && sudo apt autoremove
 sudo apt install git
 sudo apt install -y default-jre default-jdk
-sudo apt install -y python3 python3-pygments
+sudo apt install -y python3-pygments
 sudo apt-get install -y texlive-full
 tlmgr init-usertree # initialize tlmgr
 tlmgr update --self --all
@@ -72,9 +72,11 @@ Scarica una copia del progetto
 git clone https://github.com/emanuelenardi/latex-algorithms.git
 ```
 
-Nella cartelle del progetto `src/windows/scripts` e `src/unix/scripts` sono presenti gli _scripts_ necessari per la compilazione del progetto in Windows e Linux/Mac rispettivamente.
+> Se lavori su linux/mac controlla che il carattere di fine riga dell'editor sia impostato su `LF` (su VScode lo trovi in basso a destra).
 
-Per compilare il progetto, una volta soddisfatti i requisiti, **eseguire dalla cartella** `root`:
+Nella cartelle del progetto `src/scripts/windows` e `src/scripts/unix` sono presenti gli _scripts_ necessari per la compilazione e pulizia del progetto in Windows e Linux/Mac rispettivamente.
+
+Per compilare il progetto, una volta soddisfatti [i requisiti](#11-requisiti-per-la-compilazione-), eseguire lo script:
 
 ```bash
 ./src/scripts/unix/compile-project.sh     # linux/mac
@@ -85,10 +87,11 @@ alla fine dell'esecuzione ispezionando la cartella `build` troverai una cartella
 
 Lo script è composto a sua volta da altri script, contenuti nella stessa cartella, quali:
 
-- `reset-project`: cancella il preambolo precompilato del documento principale e quello degli algoritmi, cancella inoltre il contenuto della cartella `build`;
+- `compile-chapters`: compila ogni singolo capitolo e li mette nella cartella `build/chapters`, pulisce i file ausiliari prodotti;
+- `compile-main`: compila solo il documento principale ed effettua una pulizia dei file ausiliari;
 - `compile-preambles`: precompila i preamboli del documento principale e degli algoritmi per migliorare la velocità di compilazione;
-- `compile-chapters`: compila ogni singolo capitolo e li mette nella cartella `build/chapters`;
-- `compile-main`: compila solo il documento principale.
+- `reset-project`: cancella il preambolo precompilato del documento principale e quello degli algoritmi, cancella inoltre il contenuto della cartella `build`;
+- `update-latex`: aggiorna l'installazione di texlive tramite `tlmgr`.
 
 I nomi degli scripts sono equivalenti per la piattaforma Windows utilizzando gli script sull'omonima cartella.
 
