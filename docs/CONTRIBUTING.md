@@ -1,5 +1,7 @@
 # 1. Contribuire a questo progetto
 
+I contributi sono sempre benvenuti, non importa quanto piccoli o grandi siano.
+
 - [1. Contribuire a questo progetto](#1-contribuire-a-questo-progetto)
   - [1.1. Requisiti per la compilazione 📌](#11-requisiti-per-la-compilazione-)
     - [1.1.1. Installazione dei requisiti su Windows](#111-installazione-dei-requisiti-su-windows)

@@ -50,7 +50,9 @@ jobs:
       - name: Step 3 - Compile ⚙️ LaTeX document
         uses: xu-cheng/texlive-action/full@v1
         with:
-          run: $SCRIPT_DIR/compile-project.sh
+          run: |
+            $SCRIPT_DIR/compile-project.sh
+            source $SCRIPT_DIR/check-files.sh; isCompilationRanCorrectly
 
       - name: Step 4 - Bump version 🔼 & push tag 🏷️
         if: ${{ success() }}

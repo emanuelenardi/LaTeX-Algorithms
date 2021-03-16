@@ -87,7 +87,7 @@ Se trovi errori di qualsiasi natura non avere remore a segnalarli sul [gruppo di
 
 ## Contribuire ✏️
 
-Per contribuire a questo progetto segui le [linee guida](docs/CONTRIBUTING.md).
+I nuovi collaboratori sono sempre benvenuti! Leggi le [linee guida](docs/CONTRIBUTING.md) per essere coinvolto.
 
 Se hai trovato utili questi appunti metti la ⭐!
 
