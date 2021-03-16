@@ -50,7 +50,7 @@ sudo apt -y update && sudo apt -y upgrade && sudo apt autoremove
 sudo apt install git
 sudo apt install -y default-jre default-jdk
 sudo apt install -y python3-pygments
-sudo apt-get install -y texlive-full
+sudo apt install -y texlive-full
 tlmgr init-usertree # initialize tlmgr
 tlmgr update --self --all
 ```
