@@ -1,7 +1,7 @@
 #!/bin/bash
 source "${BASH_SOURCE%/*}/common.sh"
 
-chapters_tex=$(ls -A $CHAPTER_DIR | wc -l)
+chapters_tex=$(ls -p $CHAPTERS_DIR | grep -v / | wc -l)
 chapters_pdf=$(ls -A $BUILD_DIR/chapters | wc -l)
 
 echo "number of chapters:     $chapters_tex"
