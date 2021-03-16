@@ -6,9 +6,9 @@ set INITIAL_WORKING_DIRECTORY=%cd%
 echo: & echo ==================== COMPILO SINGOLI CAPITOLI =================== & echo:
 cd %CHAPTERS_DIR%
 @REM https://stackoverflow.com/a/9429985/6505634
-@REM for /F %%x in ('dir /B *.tex') do (
-@REM 	arara %%x
-@REM )
+for /F %%x in ('dir /B *.tex') do (
+	arara %%x
+)
 
 cd %BUILD_DIR%
 @REM rmdir /q /s _minted-cache >nul 2>&1
