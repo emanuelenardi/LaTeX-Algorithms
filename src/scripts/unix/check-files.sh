@@ -18,7 +18,7 @@ echo $separator
 printf "%-20s %2s/%s\n" "no. of chs. built" "$chapters_pdf" "$chapters_tex"
 
 echo $separator
-if [ -d "$main_build" ]; then
+if [ -f "$main_build" ]; then
   printf "%23s %s\n" "main" "✔️"
 else
   printf "%23s %s\n" "main" "❌"
